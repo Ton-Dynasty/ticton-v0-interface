@@ -1,0 +1,26 @@
+.conversation-arrow-left{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -8px;
+    border-style: solid;
+    border-color: transparent #0F172ACC;
+    border-width: 0px 8px 8px 0px;
+    width: 0;
+    height: 0;
+}
+
+.conversation-arrow-right{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -8px;
+    border-style: solid;
+    border-color: transparent #0F172ACC;
+    border-width: 0px 0px 8px 8px;
+    width: 0;
+    height: 0;
+
+}

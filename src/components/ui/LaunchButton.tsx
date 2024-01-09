@@ -9,7 +9,7 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        default: "bg-gradient-to-t from-[#60A5FA66] to-[#8F96E666] rounded-[25px] text-[#BFDBFE] hover:bg-primary/90 baloo launch-btn-text",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
@@ -39,7 +39,7 @@ export interface ButtonProps
   asChild?: boolean
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+const LaunchButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
     return (
@@ -51,6 +51,6 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     )
   }
 )
-Button.displayName = "Button"
+LaunchButton.displayName = "Button"
 
-export { Button, buttonVariants }
+export { LaunchButton, buttonVariants }

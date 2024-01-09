@@ -1,0 +1,19 @@
+.logo-text{
+    background: linear-gradient(180deg, #93C5FD 0%, #8F96E6 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+  }
+
+  
+.launch-btn-text{
+    color: var(--Colors-blue-200, #BFDBFE);
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px; /* 140% */
+  }

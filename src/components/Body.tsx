@@ -16,8 +16,8 @@ const Body = () => {
       {/* <RoleCarousel /> */}
       {/* <Conversation /> */}
       <Feature />
-      {/* <Contact /> */}
-      {/* <Footer /> */}
+      <Contact />
+      <Footer />
     </>
   );
 };

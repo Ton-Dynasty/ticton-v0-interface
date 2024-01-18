@@ -25,7 +25,7 @@ const Feature = () => {
           </div>
           <div className="w-full mt-4 h-56 relative overflow-hidden">
             <img
-              className="w-full h-auto top-0 absolute"
+              className="w-full h-auto top-0 absolute hover:bg-[url('/src/assets/feature/hover/magic.gif')]"
               src={ImageDecentralization}
             />
           </div>
@@ -44,7 +44,7 @@ const Feature = () => {
           </div>
           <div className="w-full mt-4 h-56 relative overflow-hidden">
             <img
-              className="w-full h-auto top-0 absolute"
+              className="w-full h-auto top-0 absolute hover:bg-[url('/src/assets/feature/hover/magic.gif')]"
               src={ImageLowLatency}
             />
           </div>
@@ -63,7 +63,7 @@ const Feature = () => {
           </div>
           <div className="w-full mt-4 h-56 relative overflow-hidden">
             <img
-              className="w-full h-auto top-0 absolute"
+              className="w-full h-auto top-0 absolute hover:bg-[url('/src/assets/feature/hover/magic.gif')]"
               src={ImageUnrestricted}
             />
           </div>
@@ -82,7 +82,7 @@ const Feature = () => {
           </div>
           <div className="w-full mt-4 h-56 relative overflow-hidden md:h-44 md:mt-0 md:w-44 md:order-first md:flex md:justify-center md:items-center">
             <img
-              className="w-full h-auto top-0 absolute md:top-auto md:block"
+              className="w-full h-auto top-0 absolute md:top-auto md:block hover:bg-[url('/src/assets/feature/hover/magic.gif')]"
               src={ImageSafeGuard}
             />
           </div>
@@ -101,7 +101,7 @@ const Feature = () => {
           </div>
           <div className="w-full mt-4 h-56 relative overflow-hidden md:h-44 md:mt-0 md:w-44 md:order-last md:flex md:justify-center md:items-center">
             <img
-              className="w-full h-auto top-0 absolute md:top-auto md:block"
+              className="w-full h-auto top-0 absolute md:top-auto md:block hover:bg-[url('/src/assets/feature/hover/magic.gif')]"
               src={ImageHighTPS}
             />
           </div>

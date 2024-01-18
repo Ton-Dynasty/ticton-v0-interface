@@ -7,7 +7,7 @@ const Home = () => {
     { text: "Learn more", href: "/" },
   ];
   return (
-    <section className="flex flex-col w-full justify-center items-center gap-9 h-[46rem] md:h-screen">
+    <section className="flex flex-col w-full justify-center items-center gap-9 h-[50rem] md:h-screen">
       <span className="py-0 text-center font-bold title-gradient text-transparent bg-clip-text text-4xl md:text-6xl font-baloo-da">
         Tick-Tock, Tic Ton.
       </span>

@@ -77,7 +77,7 @@
 
 @layer components {
   section {
-    @apply relative max-w-screen-md mx-auto px-4;
+    @apply relative max-w-screen-md mx-auto px-4 overflow-x-hidden;
   }
   .title-gradient {
     background: linear-gradient(

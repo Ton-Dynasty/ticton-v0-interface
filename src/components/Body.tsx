@@ -12,12 +12,12 @@ const Body = () => {
     <>
       <Home />
       <Introduction />
-      <Milestone />
-      {/* <RoleCarousel />
-      <Conversation />
-      <Feature />
+      {/* <Milestone /> */}
+      {/* <RoleCarousel /> */}
+      {/* <Conversation /> */}
+      {/* <Feature /> */}
       <Contact />
-      <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -1,11 +1,24 @@
-import { Banknote } from "lucide-react";
+import { Banknote, UsersRound, Coins } from "lucide-react";
+
 import vibrant3D from "@/assets/vibrant-3D.png";
 
 const Introduction = () => {
   const data = [
-    { title: "TVL", value: "$ 87.5B" },
-    { title: "Attendees (24h)", value: "+ 78,342" },
-    { title: "Reward (TIC)", value: "+ 12.3M" },
+    {
+      title: "TVL",
+      value: "$ 87.5B",
+      icon: <Banknote className="w-8 h-8 text-white" />,
+    },
+    {
+      title: "Attendees (24h)",
+      value: "+ 78,342",
+      icon: <UsersRound className="w-8 h-8 text-white" />,
+    },
+    {
+      title: "Reward (TIC)",
+      value: "+ 12.3M",
+      icon: <Coins className="w-8 h-8 text-white" />,
+    },
   ];
   return (
     <section className="flex flex-col w-full justify-center items-center">
@@ -26,10 +39,10 @@ const Introduction = () => {
         </span>
         <div className="flex flex-col md:flex-row text-white gap-16 md:gap-4 m-4">
           <div className="flex flex-col justify-between items-center w-auto  md:h-auto md:w-1/2 mx-auto">
-            {data.map(({ title, value }) => (
-              <div className="flex flex-row justify-start items-center w-full gap-4 h-32 md:h-full">
+            {data.map(({ title, value, icon }) => (
+              <div className="flex flex-row justify-start items-center w-full gap-4 h-32 md:h-full md:ml-20">
                 <div className="bg-zinc-400 bg-opacity-10 rounded-xl w-14 h-14 flex justify-center items-center md:mx-0">
-                  <Banknote className="w-8 h-8 text-white" />
+                  {icon}
                 </div>
                 <div className="flex flex-col">
                   <p className="font-inter text-left">{title}</p>
@@ -40,8 +53,7 @@ const Introduction = () => {
               </div>
             ))}
           </div>
-
-          <div className="flex justify-center md:justify-end md:w-1/2">
+          <div className="flex justify-center md:justify-end md:w-1/2 order-first md:order-none">
             <img src={vibrant3D} alt="" />
           </div>
         </div>

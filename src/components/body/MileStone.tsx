@@ -1,39 +1,48 @@
-import running from "../../assets/running.svg";
-import schedule from "../../assets/schedule.svg";
-
-function Milestone() {
+const Milestone = () => {
   return (
     <section className="flex flex-col w-full  justify-center items-center py-[90px]">
       <div className="flex flex-col max-w-[885px] w-full justify-center items-center gap-9 pb-[137px]">
-        <span className="bungee title text-transparent bg-clip-text py-0 text-[24px]">
+        <span className="text-center text-2xl font-normal font-bungee leading-9 title-gradient bg-clip-text text-transparent">
           MILESTONE
         </span>
-        <div className="flex gap-[36px] items-center flex-col md:flex-row">
-          <span className="droid px-[25px] text-[40px] font-bold text-[#A5B4FC]">
-            V1
+        <div className="flex gap-9 items-center flex-col md:flex-row">
+          <span className="font-droid px-[25px] text-4xl font-bold text-indigo-300">
+            t1
           </span>
-          <div className="flex justify-center items-center px-[20px] gap-[10px]">
-            <img src={running} />
-            <span className="duru text-[16px] font-normal text-teal-500">
-              Developing
-            </span>
+          <div className="w-44 h-24 flex-col justify-center items-start inline-flex">
+            <div className="py-3 rounded-full flex-col justify-center items-center gap-9 flex">
+              <div className="text-indigo-300 text-2xl font-bold font-droid">
+                Version 1.0
+              </div>
+            </div>
+            <div className="h-9 py-6 rounded-2xl justify-center items-center gap-2 inline-flex">
+              <div className="text-fuchsia-300 text-base font-normal font-duru">
+                Developing
+              </div>
+            </div>
           </div>
-          <div className=" bg-[#8f96e6]/[12%] text-[#f2f2f2] rounded-[20px] px-[20px] py-[24px] inter text-[16px]">
+          <div className=" bg-indigo-400 bg-opacity-10 text-zinc-100 rounded-[20px] px-5 py-6 font-inter text-base text-justify">
             The Oracle mechanism operates with economic stability, providing
             reliable price references.
           </div>
         </div>
-        <div className="flex gap-[36px] items-center flex-col md:flex-row">
-          <span className="droid px-[25px] text-[40px] font-bold text-[#A5B4FC]">
-            V2
+        <div className="flex gap-9 items-center flex-col md:flex-row">
+          <span className="font-droid px-[25px] text-4xl font-bold text-indigo-300">
+            t2
           </span>
-          <div className="flex justify-center items-center px-[20px] gap-[10px]">
-            <img src={schedule} />
-            <span className="duru text-[16px] font-normal text-amber-500">
-              Scheduled
-            </span>
+          <div className="w-44 h-24 flex-col justify-center items-start inline-flex">
+            <div className="py-3 rounded-full flex-col justify-center items-center gap-9 flex">
+              <div className="text-indigo-300 text-3xl font-bold font-droid leading-loose">
+                Version 2.0
+              </div>
+            </div>
+            <div className="h-9 py-6 rounded-2xl justify-center items-center gap-2 inline-flex">
+              <div className="text-fuchsia-300 text-base font-normal font-duru leading-loose">
+                Scheduled
+              </div>
+            </div>
           </div>
-          <div className=" bg-[#8f96e6]/[12%] text-[#f2f2f2] rounded-[20px] px-[20px] py-[24px] inter text-[16px]">
+          <div className=" bg-indigo-400 bg-opacity-10 text-zinc-100 rounded-[20px] px-5 py-6 font-inter text-base text-justify">
             Implementing On Demand Oracle with Merkle Proof, significantly
             reducing the integration cost of DeFi Protocol with our product.
           </div>
@@ -41,6 +50,6 @@ function Milestone() {
       </div>
     </section>
   );
-}
+};
 
 export default Milestone;

@@ -80,7 +80,7 @@ module.exports = {
         "duru": ['"Duru Sans"', "sans-serif"],
         "inter": ['"Inter"', "sans-serif"],
         "doppio": ['"Doppio One"', "sans-serif"],
-        "dohyon": ['"Do Hyeon"', "sans-serif"],
+        "dohyeon": ['"Do Hyeon"', "sans-serif"],
         "dmsans": ['"DM Sans"', "sans-serif"],
       },
     },

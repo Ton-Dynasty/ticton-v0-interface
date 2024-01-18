@@ -15,9 +15,9 @@ const Body = () => {
       {/* <Milestone /> */}
       {/* <RoleCarousel /> */}
       {/* <Conversation /> */}
-      {/* <Feature /> */}
-      <Contact />
-      <Footer />
+      <Feature />
+      {/* <Contact /> */}
+      {/* <Footer /> */}
     </>
   );
 };

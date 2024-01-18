@@ -1,19 +1,8 @@
- 
-  .title{
-    background: linear-gradient(90deg, #2F91FF 0.96%, #8F96E6 50%, #713FFF 101.75%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 60px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 60px;
-  }
-  
-  .title-description{
-    color: var(--Colors-slate-300, #CBD5E1);
-    text-align: center;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-  }
+.title {
+  background: linear-gradient(
+    90deg,
+    #2f91ff 0.96%,
+    #8f96e6 50%,
+    #713fff 101.75%
+  );
+}

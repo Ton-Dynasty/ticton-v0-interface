@@ -3,7 +3,7 @@ import schedule from "../../assets/schedule.svg";
 
 function Milestone() {
   return (
-    <div className="flex flex-col w-full  justify-center items-center py-[90px]">
+    <section className="flex flex-col w-full  justify-center items-center py-[90px]">
       <div className="flex flex-col max-w-[885px] w-full justify-center items-center gap-9 pb-[137px]">
         <span className="bungee title text-transparent bg-clip-text py-0 text-[24px]">
           MILESTONE
@@ -39,7 +39,7 @@ function Milestone() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

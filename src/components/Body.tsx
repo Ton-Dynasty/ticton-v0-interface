@@ -9,16 +9,16 @@ import Footer from "./Footer";
 
 const Body = () => {
   return (
-    <div className="p-3">
+    <>
       <Home />
       <Introduction />
       <Milestone />
-      <RoleCarousel />
+      {/* <RoleCarousel />
       <Conversation />
       <Feature />
       <Contact />
-      <Footer />
-    </div>
+      <Footer /> */}
+    </>
   );
 };
 

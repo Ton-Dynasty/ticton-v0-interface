@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import "./Home.css";
 
 const Home = () => {
   const links = [
@@ -8,8 +7,8 @@ const Home = () => {
     { text: "Learn more", href: "/" },
   ];
   return (
-    <section className="flex flex-col w-full h-96 justify-center items-center gap-9 pt-36 pb-32">
-      <span className="py-0 text-center font-bold title text-transparent bg-clip-text text-4xl md:text-6xl font-baloo-da">
+    <section className="flex flex-col w-full justify-center items-center gap-9 h-[46rem] md:h-screen">
+      <span className="py-0 text-center font-bold title-gradient text-transparent bg-clip-text text-4xl md:text-6xl font-baloo-da">
         Tick-Tock, Tic Ton.
       </span>
       <span className="font-baloo-da text-center text-slate-300 w-full max-w-screen-md font-normal text-2xl md:text-3xl">

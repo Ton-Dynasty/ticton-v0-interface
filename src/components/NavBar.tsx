@@ -4,9 +4,9 @@ import "./NavBar.css";
 
 function NavBar() {
   return (
-    <div className=" flex w-full px-[12px] py-[11.25px] justify-between items-center">
+    <div className=" flex w-full px-3 py-3 justify-between items-center sticky">
       <div className="flex items-center">
-        <img className=" px-[10px]" src={logo} />
+        <img className=" px-3" src={logo} />
         <span className="font-monda logo-text">TICTON</span>
       </div>
       <div className="gap-5 text-[#CBD5E1] text-[20px] font-baloo hidden lg:flex">

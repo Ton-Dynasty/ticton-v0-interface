@@ -3,7 +3,7 @@ import Body from "./components/Body";
 function App() {
   return (
     <>
-      <div className="bg-slate-950 ">
+      <div className="bg-slate-950">
         <NavBar />
         <Body />
       </div>

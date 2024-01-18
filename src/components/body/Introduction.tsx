@@ -1,6 +1,3 @@
-// import moneys from "../../assets/moneys.svg";
-// import chart from "../../assets/chart-square.svg";
-// import wallet from "../../assets/wallet-money.svg";
 import { Banknote } from "lucide-react";
 import vibrant3D from "@/assets/vibrant-3D.png";
 
@@ -12,14 +9,14 @@ const Introduction = () => {
   ];
   return (
     <section className="flex flex-col w-full justify-center items-center">
-      <div className="flex flex-col w-full justify-center items-center gap-9 max-w-screen-md">
-        <span className="font-bungee title text-transparent bg-clip-text py-0 text-lg">
+      <div className="flex flex-col w-full justify-center items-center gap-9">
+        <span className="font-bungee title-gradient text-transparent bg-clip-text py-0 text-lg">
           WHAT IS TICTON?
         </span>
         <span className="w-full text-center text-slate-300 text-xl md:text-5xl font-bold leading-loose">
           Pure Decentralized Oracle on Ton
         </span>
-        <span className="w-full text-center text-slate-300 text-base font-normal font-duru leading-loose">
+        <span className="w-full text-justify px-6  md:text-center text-slate-300 text-base font-normal font-duru md:leading-loose leading-normal">
           Tic Ton oracle stands as the premier fully decentralized oracle on the
           TON platform. Diverging from market-standard final prices set by price
           providers, it employs Game Theory to craft a decentralized network of

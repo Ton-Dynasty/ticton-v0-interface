@@ -1,18 +1,25 @@
-import moneys from "../../assets/moneys.svg";
-import chart from "../../assets/chart-square.svg";
-import wallet from "../../assets/wallet-money.svg";
+// import moneys from "../../assets/moneys.svg";
+// import chart from "../../assets/chart-square.svg";
+// import wallet from "../../assets/wallet-money.svg";
+import { Banknote } from "lucide-react";
+import vibrant3D from "@/assets/vibrant-3D.png";
 
 const Introduction = () => {
+  const data = [
+    { title: "TVL", value: "$ 87.5B" },
+    { title: "Attendees (24h)", value: "+ 78,342" },
+    { title: "Reward (TIC)", value: "+ 12.3M" },
+  ];
   return (
-    <div className="flex flex-col w-full justify-center items-center pt-[90px]">
-      <div className="flex flex-col max-w-[798px] w-full justify-center items-center gap-9 pb-[137px]">
-        <span className="font-bungee title text-transparent bg-clip-text py-0 text-[24px]">
+    <section className="flex flex-col w-full justify-center items-center">
+      <div className="flex flex-col w-full justify-center items-center gap-9 max-w-screen-md">
+        <span className="font-bungee title text-transparent bg-clip-text py-0 text-lg">
           WHAT IS TICTON?
         </span>
-        <span className="font-droid title-description text-[48px]">
+        <span className="w-full text-center text-slate-300 text-xl md:text-5xl font-bold leading-loose">
           Pure Decentralized Oracle on Ton
         </span>
-        <span className="font-duru text-[16px] text-white text-center leading-[30px]">
+        <span className="w-full text-center text-slate-300 text-base font-normal font-duru leading-loose">
           Tic Ton oracle stands as the premier fully decentralized oracle on the
           TON platform. Diverging from market-standard final prices set by price
           providers, it employs Game Theory to craft a decentralized network of
@@ -20,43 +27,29 @@ const Introduction = () => {
           mechanisms of arbitrage and bidirectional options, incorporating the
           chain with random data from decentralized price streams.
         </span>
-      </div>
-      <div className="flex w-full justify-center gap-10 md:gap-[76px] flex-col md:flex-row max-w-[200px] md:max-w-none">
-        <div className="flex gap-[9px]">
-          <div className="flex justify-center items-center w-[60px] h-[60px] bg-[#B0B0B0]/10 rounded-[13.8px]">
-            <img src={moneys} />
+        <div className="flex flex-col md:flex-row text-white gap-16 md:gap-4 m-4">
+          <div className="flex flex-col justify-between items-center w-auto  md:h-auto md:w-1/2 mx-auto">
+            {data.map(({ title, value }) => (
+              <div className="flex flex-row justify-start items-center w-full gap-4 h-32 md:h-full">
+                <div className="bg-zinc-400 bg-opacity-10 rounded-xl w-14 h-14 flex justify-center items-center md:mx-0">
+                  <Banknote className="w-8 h-8 text-white" />
+                </div>
+                <div className="flex flex-col">
+                  <p className="font-inter text-left">{title}</p>
+                  <p className="text-white text-2xl font-bold font-inter uppercase text-left">
+                    {value}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="flex flex-col inter py-[5px]">
-            <span className="text-white text-[14px]">TVL</span>
-            <span className="text-white text-[24px] font-bold uppercase ">
-              $ 87.5B
-            </span>
-          </div>
-        </div>
-        <div className="flex gap-[9px]">
-          <div className="flex justify-center items-center w-[60px] h-[60px] bg-[#B0B0B0]/10 rounded-[13.8px]">
-            <img src={wallet} />
-          </div>
-          <div className="flex flex-col inter py-[5px]">
-            <span className="text-white text-[14px]">Attendees (24h)</span>
-            <span className="text-white text-[24px] font-bold uppercase ">
-              + 78,342
-            </span>
-          </div>
-        </div>
-        <div className="flex gap-[9px]">
-          <div className="flex justify-center items-center w-[60px] h-[60px] bg-[#B0B0B0]/10 rounded-[13.8px]">
-            <img src={chart} />
-          </div>
-          <div className="flex flex-col inter py-[5px]">
-            <span className="text-white text-[14px]">Reward (TIC)</span>
-            <span className="text-white text-[24px] font-bold uppercase ">
-              + 12.3M
-            </span>
+
+          <div className="flex justify-center md:justify-end md:w-1/2">
+            <img src={vibrant3D} alt="" />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

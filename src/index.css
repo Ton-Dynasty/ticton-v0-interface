@@ -73,8 +73,4 @@
   body {
     @apply bg-background text-foreground;
   }
-  @font-face {
-    font-family: "Droid-sans";
-    src: url("./assets/DroidSans.ttf") format("truetype");
-  }
 }

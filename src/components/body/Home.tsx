@@ -8,8 +8,8 @@ const Home = () => {
     { text: "Learn more", href: "/" },
   ];
   return (
-    <div className="flex flex-col w-full h-[470px] justify-center items-center gap-9">
-      <span className="py-0 text-center baloo-da font-bold title text-transparent bg-clip-text text-4xl md:text-6xl font-baloo-da">
+    <section className="flex flex-col w-full h-96 justify-center items-center gap-9 pt-36 pb-32">
+      <span className="py-0 text-center font-bold title text-transparent bg-clip-text text-4xl md:text-6xl font-baloo-da">
         Tick-Tock, Tic Ton.
       </span>
       <span className="font-baloo-da text-center text-slate-300 w-full max-w-screen-md font-normal text-2xl md:text-3xl">
@@ -32,7 +32,7 @@ const Home = () => {
           </Button>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

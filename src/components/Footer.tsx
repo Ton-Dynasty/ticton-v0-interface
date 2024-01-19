@@ -21,7 +21,7 @@ function Footer() {
       <div className="w-full lg:w-[70%] flex flex-col gap-[36px]">
         <div className="w-full flex justify-end gap-[10px]">
           <Button variant={"link"} onClick={handleDCClick}>
-            <img src={mdDiscord}></img>
+            <img src={mdDiscord} className="hover:fill-indigo-500"></img>
           </Button>
           <Button variant={"link"} onClick={handleTGClick}>
             <img src={mdTelegram}></img>

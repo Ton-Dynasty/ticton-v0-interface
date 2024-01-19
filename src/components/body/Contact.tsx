@@ -6,7 +6,7 @@ const Contact = () => {
   };
   return (
     <section className="flex flex-col w-full  justify-center items-center bg-blue-300 rounded-2xl py-10 md:py-20 max-w-screen-md mx-auto px-16 md:px-20 gap-10">
-      <div className=" w-full text-blue-950 text-lg md:text-4xl font-bold font-droid leading md:leading-10 md:text-justify">
+      <div className=" w-full text-blue-950 text-lg md:text-3xl font-bold font-droid leading md:leading-10 md:text-justify">
         We are a community of dreamers and innovators from around the world who
         are creating a better future and solving the problems of today.
       </div>

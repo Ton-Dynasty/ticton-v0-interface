@@ -13,7 +13,7 @@ const Body = () => {
       <Home />
       <Introduction />
       {/* <Milestone /> */}
-      {/* <RoleCarousel /> */}
+      <RoleCarousel />
       {/* <Conversation /> */}
       <Feature />
       <Contact />

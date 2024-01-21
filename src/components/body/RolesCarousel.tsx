@@ -100,7 +100,7 @@ const RolesCarousel = () => {
   ];
 
   return (
-    <section className="flex h-screen w-full flex-col items-center justify-center px-6 py-10">
+    <section className="flex w-full flex-col items-center justify-center px-6 py-10">
       <div className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent">
         Participants
       </div>
@@ -128,7 +128,7 @@ const RolesCarousel = () => {
 
       <div className="flex h-auto w-full flex-col items-center justify-center overflow-hidden md:h-96">
         <div
-          className="h-auto whitespace-nowrap transition-transform duration-300 md:h-full"
+          className="relative h-auto whitespace-nowrap transition-transform duration-300 md:h-full"
           style={{ transform: `translate(-${activeIndex * 100}%)` }}
         >
           {carouselItems.map((item) => {

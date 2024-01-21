@@ -82,6 +82,7 @@ module.exports = {
         "doppio": ['"Doppio One"', "sans-serif"],
         "dohyeon": ['"Do Hyeon"', "sans-serif"],
         "dmsans": ['"DM Sans"', "sans-serif"],
+        "sora": ['"Sora"', "sans-serif"],
       },
     },
   },

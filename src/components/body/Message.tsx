@@ -26,7 +26,7 @@ export const MessageRow = ({
       className={`flex w-full flex-row ${side === "left" ? "justify-start" : "justify-end"} my-4 items-center gap-2`}
     >
       <div
-        className={`h-16 w-16 ${side === "left" ? "order-1" : "order-3"} rounded-full`}
+        className={`h-16 w-16 ${side === "left" ? "order-1" : "order-3"} rounded-full bg-slate-900`}
       >
         <img src={avatar} alt={avatar} />
       </div>
@@ -39,7 +39,7 @@ export const MessageRow = ({
         </div>
       </div>
       <div
-        className={`font-sora self-end text-xs font-normal capitalize text-neutral-700 ${side === "left" ? "order-3" : "order-1"}`}
+        className={`self-end font-sora text-xs font-normal capitalize text-neutral-700 ${side === "left" ? "order-3" : "order-1"}`}
       >
         {time}
       </div>

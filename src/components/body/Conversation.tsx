@@ -15,16 +15,16 @@ const Conversation = () => {
       avatar: WatchMakerAvatar,
       profile: <Profile name="Jacky" role="Watchmaker" />,
       content: (
-        <>
-          <div className="font-sora text-base font-normal capitalize text-zinc-100 text-opacity-80">
+        <div className="flex-wrap md:inline-flex md:items-center md:justify-center">
+          <div className="font-sora text-sm font-normal text-zinc-100 text-opacity-80 md:text-base">
             I think{" "}
           </div>
-          <div className="flex items-center justify-start gap-2.5 rounded-3xl bg-indigo-300 bg-opacity-20 px-3 py-1">
-            <div className="font-sora text-base font-normal capitalize text-zinc-100">
+          <div className="flex items-center justify-start gap-2.5 rounded-3xl bg-indigo-300 bg-opacity-20 px-3 py-1 md:mx-2">
+            <div className="font-sora text-sm font-normal text-zinc-100 md:text-base">
               1 Ton = 2 jUSDT
             </div>
           </div>
-        </>
+        </div>
       ),
       time: "10:00 AM",
       side: "left",
@@ -37,22 +37,22 @@ const Conversation = () => {
         <>
           <div className="flex flex-col gap-2">
             <div className="inline-flex items-center justify-start gap-2.5">
-              <div className="font-sora text-base font-normal capitalize text-white">
-                It’s TOO LOW.{" "}
+              <div className="font-sora text-sm font-normal text-white md:text-base">
+                Underestimate !{" "}
               </div>
-              <div className="flex items-center justify-start gap-2.5 rounded-3xl bg-amber-500 px-3 py-1">
-                <div className="font-sora text-base font-normal capitalize text-zinc-100">
-                  +2.2 TON
+              <div className="hidden items-center justify-start gap-2.5 rounded-3xl bg-amber-500 px-3 py-1 md:flex">
+                <div className=" text-zinc-10 font-sora text-sm font-normal md:text-base">
+                  + 2 TON
                 </div>
               </div>
             </div>
-            <div className="inline-flex items-center justify-start gap-2.5">
-              <div className="font-sora text-base font-normal capitalize text-white">
+            <div className="flex flex-col justify-start gap-2.5 md:flex-row md:items-center">
+              <div className="hidden font-sora text-sm font-normal text-white md:block md:text-base">
                 I think
               </div>
               <div className="flex items-center justify-start gap-2.5 rounded-3xl bg-indigo-300 bg-opacity-20 px-3 py-1">
-                <div className="font-sora text-base font-normal capitalize text-zinc-100">
-                  1 Ton = 10 jUSDT
+                <div className="font-sora text-sm font-normal text-zinc-100 md:text-base">
+                  1 TON = 10 jUSDT
                 </div>
               </div>
             </div>
@@ -68,11 +68,11 @@ const Conversation = () => {
       profile: <Profile name="Jacky" role="Watchmaker" />,
       content: (
         <>
-          <div className="font-sora text-base font-normal capitalize text-zinc-100 text-opacity-80">
+          <div className="font-sora text-base font-normal text-zinc-100 text-opacity-80">
             Claim{" "}
           </div>
           <div className="flex items-center justify-start gap-2.5 rounded-3xl bg-blue-500 px-3 py-1">
-            <div className="font-sora text-base font-normal capitalize text-zinc-100">
+            <div className="font-sora text-base font-normal text-zinc-100">
               +2.2 TIC
             </div>
           </div>
@@ -103,7 +103,7 @@ const Conversation = () => {
         Let’s make it simple
       </div>
       <div className="my-10">
-        <p className="text-center font-duru text-base font-normal text-slate-300">
+        <p className="text-pretty text-center font-duru text-base font-normal text-slate-300">
           We simulate smart contracts into message transmission for explanation
           purposes. Please refer to the{" "}
           <button

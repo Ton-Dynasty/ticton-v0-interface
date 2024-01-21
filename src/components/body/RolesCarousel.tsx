@@ -113,7 +113,7 @@ const RolesCarousel = () => {
   });
 
   return (
-    <motion.section className="flex h-screen w-full flex-col items-center justify-center px-6 py-10">
+    <motion.section className="flex w-full flex-col items-center justify-center px-6 py-10 md:h-screen">
       <motion.div
         initial="hidden"
         variants={fadeIn("up", 0.3)}

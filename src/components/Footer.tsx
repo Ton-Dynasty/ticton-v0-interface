@@ -11,15 +11,15 @@ function Footer() {
     console.error("not implemented");
   };
   const handleTGClick = () => {
-    console.error("not implemented");
+    window.open("https://t.me/tictonchat", "_blank");
   };
   const handleTwitterClick = () => {
-    console.error("not implemented");
+    window.open("https://x.com/TicTonOracle", "_blank");
   };
   return (
-    <footer className=" flex w-full px-[12px] py-[11.25px] justify-center items-center mt-[86px]">
-      <div className="w-full lg:w-[70%] flex flex-col gap-[36px]">
-        <div className="w-full flex justify-end gap-[10px]">
+    <footer className=" mt-[86px] flex w-full items-center justify-center px-[12px] py-[11.25px]">
+      <div className="flex w-full flex-col gap-[36px] lg:w-[70%]">
+        <div className="flex w-full justify-end gap-[10px]">
           <Button variant={"link"} onClick={handleDCClick}>
             <img src={mdDiscord} className="hover:fill-indigo-500"></img>
           </Button>
@@ -30,8 +30,8 @@ function Footer() {
             <img src={mdTwitter}></img>
           </Button>
         </div>
-        <div className="w-full h-[1px] bg-slate-400"></div>
-        <div className="w-full flex justify-between">
+        <div className="h-[1px] w-full bg-slate-400"></div>
+        <div className="flex w-full justify-between">
           <div className="font-duru text-sm leading-[30px] text-white">
             Based on TON
           </div>

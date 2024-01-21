@@ -1,11 +1,61 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../animation/fade";
+import { useEffect, useState } from "react";
+
 const Contact = () => {
-  const getCommunityNumber = () => {
-    const num = Math.floor(Math.random() * 1e6);
-    console.log(num);
-    return num;
+  const [communityCount, setCommunityCount] = useState(0);
+  const [animationStarted, setAnimationStarted] = useState(false);
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + window.scrollY >=
+      document.body.offsetHeight - 200
+    ) {
+      setAnimationStarted(true);
+      window.removeEventListener("scroll", handleScroll);
+    } else if (
+      window.scrollY < document.body.offsetHeight - 200 &&
+      communityCount !== target
+    ) {
+      setAnimationStarted(false);
+      setCommunityCount(0);
+    }
   };
+
+  const target = 999999;
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  });
+
+  useEffect(() => {
+    if (!animationStarted) return;
+
+    let start: number = 0;
+    const duration = 3000; // Duration in milliseconds
+
+    const frame = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const easeInOutProgress =
+        -(Math.cos((Math.PI * progress) / duration) - 1) / 2;
+
+      setCommunityCount(
+        Math.round(Math.min(easeInOutProgress * target, target)),
+      );
+
+      if (progress < duration) {
+        requestAnimationFrame(frame);
+      }
+    };
+
+    requestAnimationFrame(frame);
+  }, [animationStarted, target]);
+
   return (
     <motion.section
       initial="hidden"
@@ -28,8 +78,8 @@ const Contact = () => {
           Total community member
         </div>
         <div className="mt-2 flex gap-7">
-          <div className="flex gap-1.5 text-base leading-10 md:text-3xl">
-            {getCommunityNumber()
+          <motion.div className="flex gap-1.5 text-base leading-10 md:text-3xl">
+            {communityCount
               .toString()
               .padStart(6, "0")
               .split("")
@@ -47,7 +97,7 @@ const Contact = () => {
                   </>
                 );
               })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </motion.section>

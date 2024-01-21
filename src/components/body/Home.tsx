@@ -1,20 +1,22 @@
 import { Button } from "@/components/ui/button";
+import TicTonLogo from "../../assets/logo.svg";
 
 const Home = () => {
   const links = [
-    { text: "Document", href: "/" },
-    { text: "Mini APP", href: "/" },
-    { text: "Learn more", href: "/" },
+    { text: "Document", href: "#" },
+    { text: "Mini APP", href: "#" },
+    { text: "Learn more", href: "#" },
   ];
   return (
-    <section className="flex flex-col w-full justify-center items-center gap-9 h-[50rem] md:h-screen">
-      <span className="py-0 text-center font-bold title-gradient text-transparent bg-clip-text text-4xl md:text-6xl font-baloo-da">
+    <section className="flex h-[50rem] w-full flex-col items-center justify-center gap-9 md:h-screen">
+      <img src={TicTonLogo} className=" m-3 h-28 w-28 rounded-full p-1"></img>
+      <span className="title-gradient bg-clip-text py-0 text-center font-baloo-da text-4xl font-bold text-transparent md:text-6xl">
         Tick-Tock, Tic Ton.
       </span>
-      <span className="font-baloo-da text-center text-slate-300 w-full max-w-screen-md font-normal text-2xl md:text-3xl">
+      <span className="w-full max-w-screen-md text-center font-baloo-da text-2xl font-normal text-slate-300 md:text-3xl">
         Arbitrage and integrate with the leading decentralized oracle on TON.
       </span>
-      <div className="font-baloo flex justify-center items-center gap-4">
+      <div className="flex items-center justify-center gap-4 font-baloo">
         {links.map(({ text, href }) => (
           <Button
             variant={"home"}
@@ -23,8 +25,8 @@ const Home = () => {
               window.open(href, "_blank");
             }}
           >
-            <div className="flex w-full bg-slate-900 rounded-full px-3 py-1">
-              <span className="p-0 m-0 w-full bg-gradient-to-br bg-clip-text from-[#93C5FD] to-[#8F96E6] text-transparent text-sm md:text-xl">
+            <div className="flex w-full rounded-full bg-slate-900 px-3 py-1">
+              <span className="m-0 w-full bg-gradient-to-br from-[#93C5FD] to-[#8F96E6] bg-clip-text p-0 text-sm text-transparent md:text-xl">
                 {text}
               </span>
             </div>

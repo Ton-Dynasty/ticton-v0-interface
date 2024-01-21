@@ -1,4 +1,4 @@
-import { LaunchButton } from "./ui/LaunchButton";
+import { Button } from "./ui/button";
 import logo from "../assets/logo.svg";
 import "./NavBar.css";
 
@@ -10,11 +10,19 @@ function NavBar() {
         <span className="logo-text font-monda">TICTON</span>
       </div>
       <div className="hidden gap-5 font-baloo text-[20px] text-[#CBD5E1] lg:flex">
-        <a href="#">What is TICTON?</a>
-        <a href="#">Document</a>
-        <a href="#">Community</a>
+        <a href="#" target="_blank">
+          What is TICTON?
+        </a>
+        <a href="https://ton-dynasty.github.io/ticton-doc/" target="_blank">
+          Document
+        </a>
+        <a href="https://t.me/tictonchat" target="_blank">
+          Community
+        </a>
       </div>
-      <LaunchButton>Launch App</LaunchButton>
+      <Button variant={"launch"} className="h-10 px-4 py-2">
+        Launch App
+      </Button>
     </div>
   );
 }

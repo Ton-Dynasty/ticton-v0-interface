@@ -8,7 +8,7 @@ import { fadeIn } from "../animation/fade";
 
 const Feature = () => {
   return (
-    <section className="flex flex-col items-center justify-center gap-16 py-10 md:h-screen">
+    <section className="flex flex-col items-center justify-center gap-16 py-10 md:min-h-screen">
       <motion.div
         initial="hidden"
         variants={fadeIn("up", 0.3)}

@@ -100,7 +100,7 @@ const Conversation = () => {
     },
   ];
   return (
-    <section className="flex w-full flex-col items-center justify-center px-6 py-10 ">
+    <section className="flex w-full flex-col items-center justify-center px-6 py-10 md:min-h-screen">
       <motion.div
         initial="hidden"
         variants={fadeIn("up", 0.3)}

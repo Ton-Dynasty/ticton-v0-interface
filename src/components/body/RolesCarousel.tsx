@@ -74,8 +74,8 @@ const RolesCarousel = () => {
             <span>Wind</span>
           </div>
           <div className=" text-wrap font-droid text-lg font-normal leading-tight text-slate-300">
-            If prices in other warehouses are imprecise, TimeKeeper can
-            arbitrage through the Wind Method. However, to demonstrate economic
+            If prices in other alerts are imprecise, TimeKeeper can arbitrage
+            through the Wind Method. However, to demonstrate economic
             responsibility, they must collateralize assets to become a new
             Watchmaker.
           </div>

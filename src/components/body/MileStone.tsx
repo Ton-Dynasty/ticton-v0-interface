@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "../animation/fade";
 
 interface MileStoneItem {
   version: string;
@@ -50,27 +52,34 @@ const Milestone = () => {
           MILESTONE
         </div>
       </div>
-      <div className="relative flex flex-col gap-60">
+      <div className="relative flex flex-col gap-32 md:gap-60">
         {milestones.map((milestone, index) => {
           return (
             <div
-              className="z-10 flex items-center justify-start gap-20"
+              className="z-10 flex flex-wrap items-center justify-start md:flex-nowrap md:gap-20"
               ref={!index ? ref : null}
             >
               <div>{circle}</div>
-              <div className="flex flex-col items-center justify-start">
-                <div className="text-center font-droid text-2xl font-bold text-indigo-300">
-                  {milestone.version}
+              <motion.div
+                className="flex flex-col items-center justify-center gap-10 md:flex-row"
+                initial="hidden"
+                variants={fadeIn("right", 0.3 * (index + 1))}
+                whileInView={"show"}
+              >
+                <div className="flex flex-grow flex-col flex-nowrap items-center justify-start text-nowrap">
+                  <div className="text-center font-droid text-2xl font-bold text-indigo-300">
+                    {milestone.version}
+                  </div>
+                  <div className="text-center font-duru text-sm font-normal text-fuchsia-300">
+                    {milestone.status}
+                  </div>
                 </div>
-                <div className="text-center font-duru text-sm font-normal text-fuchsia-300">
-                  {milestone.status}
+                <div className="mx-10 flex  items-center justify-center rounded-2xl border border-indigo-300 border-opacity-20 bg-indigo-400 bg-opacity-10 px-5 py-8 md:mx-0 md:h-28 md:w-auto">
+                  <div className="grow basis-0 font-inter text-base font-medium leading-normal text-zinc-100 text-opacity-80">
+                    {milestone.content}
+                  </div>
                 </div>
-              </div>
-              <div className="inline-flex h-28 w-96 items-center justify-center gap-9 rounded-2xl border border-indigo-300 border-opacity-20 bg-indigo-400 bg-opacity-10 px-5 py-8">
-                <div className="shrink grow basis-0 font-inter text-base font-medium leading-normal text-zinc-100 text-opacity-80">
-                  {milestone.content}
-                </div>
-              </div>
+              </motion.div>
             </div>
           );
         })}

@@ -61,7 +61,7 @@ const Conversation = () => {
       ),
       time: "11:35 AM",
       side: "right",
-      delay: 1.8,
+      delay: 1.3,
     },
     {
       avatar: WatchMakerAvatar,
@@ -80,21 +80,21 @@ const Conversation = () => {
       ),
       time: "12:26 PM",
       side: "left",
-      delay: 3.3,
+      delay: 2.3,
     },
     {
       avatar: User,
       profile: <Profile name="Maxey" role="User" />,
       content: (
         <>
-          <div className="font-sora max-w-72 shrink grow basis-0 text-base font-normal leading-loose text-white">
+          <div className="max-w-72 shrink grow basis-0 font-sora text-base font-normal leading-loose text-white">
             As a lending protocol, I need to get accurate price for liquidation.{" "}
           </div>
         </>
       ),
       time: "13:14 PM",
       side: "right",
-      delay: 4.8,
+      delay: 3.3,
     },
   ];
   return (

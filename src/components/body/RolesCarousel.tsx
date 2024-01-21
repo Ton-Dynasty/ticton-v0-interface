@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "../ui/button";
 import {
   Watch,
@@ -99,13 +99,16 @@ const RolesCarousel = () => {
     },
   ];
 
-  setInterval(() => {
-    if (activeIndex === 2) {
-      setActiveIndex(0);
-    } else {
-      setActiveIndex(activeIndex + 1);
-    }
-  }, 3000);
+  useEffect(() => {
+    const autoPlay = setInterval(() => {
+      if (activeIndex === 2) {
+        setActiveIndex(0);
+      } else {
+        setActiveIndex(activeIndex + 1);
+      }
+    }, 5000);
+    return () => clearInterval(autoPlay);
+  });
 
   return (
     <section className="flex w-full flex-col items-center justify-center px-6 py-10">

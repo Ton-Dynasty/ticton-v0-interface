@@ -8,7 +8,7 @@ import Profile from "./Profile";
 const Conversation = () => {
   const handleClickDoc = () => {
     // open documentation in new tab
-    window.open("https://github.com/Ton-Dynasty/ticton-doc", "_blank");
+    window.open("https://ton-dynasty.github.io/ticton-doc/", "_blank");
   };
   const messages: Array<MessageProps> = [
     {
@@ -28,6 +28,7 @@ const Conversation = () => {
       ),
       time: "10:00 AM",
       side: "left",
+      delay: 0.3,
     },
     {
       avatar: TimeKeeperAvatar,
@@ -60,6 +61,7 @@ const Conversation = () => {
       ),
       time: "11:35 AM",
       side: "right",
+      delay: 1.8,
     },
     {
       avatar: WatchMakerAvatar,
@@ -78,6 +80,7 @@ const Conversation = () => {
       ),
       time: "12:26 PM",
       side: "left",
+      delay: 3.3,
     },
     {
       avatar: User,
@@ -91,6 +94,7 @@ const Conversation = () => {
       ),
       time: "13:14 PM",
       side: "right",
+      delay: 4.8,
     },
   ];
   return (

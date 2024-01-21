@@ -1,9 +1,13 @@
+import { motion } from "framer-motion";
+import { fadeIn } from "../animation/fade";
+
 export interface MessageProps {
   avatar: string; // link to avatar
   profile: JSX.Element; // JSX element of profile
   content: JSX.Element; // JSX element of content
   time: string; // time of message e.g. 10:00AM
   side: "left" | "right"; // side of message
+  delay?: number; // delay of animation
 }
 
 export const MessageRow = ({
@@ -12,9 +16,13 @@ export const MessageRow = ({
   content,
   time,
   side,
+  delay,
 }: MessageProps) => {
   return (
-    <div
+    <motion.div
+      initial="hidden"
+      variants={fadeIn(side, delay || 0.3)}
+      whileInView={"show"}
       className={`flex w-full flex-row ${side === "left" ? "justify-start" : "justify-end"} my-4 items-center gap-2`}
     >
       <div
@@ -35,6 +43,6 @@ export const MessageRow = ({
       >
         {time}
       </div>
-    </div>
+    </motion.div>
   );
 };

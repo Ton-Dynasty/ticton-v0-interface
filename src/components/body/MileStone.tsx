@@ -79,7 +79,7 @@ const Milestone = () => {
           initial="hidden"
           variants={fadeIn("right", 0.3)}
           whileInView={"show"}
-          className="bg-gradient-to-b from-white via-purple-300 to-fuchsia-400 bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent md:bg-gradient-to-r md:bg-gradient-to-r"
+          className="bg-gradient-to-b from-white via-purple-300 to-fuchsia-400 bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent md:bg-gradient-to-r"
         >
           WOOHA
         </motion.div>

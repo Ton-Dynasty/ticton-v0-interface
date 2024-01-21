@@ -99,6 +99,14 @@ const RolesCarousel = () => {
     },
   ];
 
+  setInterval(() => {
+    if (activeIndex === 2) {
+      setActiveIndex(0);
+    } else {
+      setActiveIndex(activeIndex + 1);
+    }
+  }, 3000);
+
   return (
     <section className="flex w-full flex-col items-center justify-center px-6 py-10">
       <div className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent">

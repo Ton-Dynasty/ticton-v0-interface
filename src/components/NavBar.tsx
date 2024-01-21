@@ -4,12 +4,12 @@ import "./NavBar.css";
 
 function NavBar() {
   return (
-    <div className=" flex w-full px-3 py-3 justify-between items-center sticky">
+    <div className=" sticky flex w-full items-center justify-between px-3 py-3">
       <div className="flex items-center">
         <img className=" px-3" src={logo} />
-        <span className="font-monda logo-text">TICTON</span>
+        <span className="logo-text font-monda">TICTON</span>
       </div>
-      <div className="gap-5 text-[#CBD5E1] text-[20px] font-baloo hidden lg:flex">
+      <div className="hidden gap-5 font-baloo text-[20px] text-[#CBD5E1] lg:flex">
         <a href="#">What is TICTON?</a>
         <a href="#">Document</a>
         <a href="#">Community</a>

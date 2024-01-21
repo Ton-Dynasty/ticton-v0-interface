@@ -29,7 +29,7 @@ const Introduction = () => {
         <span className="w-full text-center text-xl font-bold leading-loose text-slate-300 md:text-5xl">
           Pure Decentralized Oracle on Ton
         </span>
-        <span className="w-full px-6 text-justify  font-duru text-base font-normal leading-normal text-slate-300 md:text-center md:leading-loose">
+        <span className="w-full px-6 font-duru text-base font-normal leading-normal text-slate-300 md:text-center md:leading-loose">
           Tic Ton oracle stands as the premier fully decentralized oracle on the
           TON platform. Diverging from market-standard final prices set by price
           providers, it employs Game Theory to craft a decentralized network of

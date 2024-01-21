@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../animation/fade";
-
 interface MileStoneItem {
   version: string;
   status: string;
@@ -24,11 +23,6 @@ const Milestone = () => {
     };
   }, []);
 
-  const circle = (
-    <div className="flex h-6 w-6 items-center justify-center rounded-full bg-indigo-300 shadow">
-      <div className="h-5 w-5 rounded-full bg-indigo-700 shadow" />
-    </div>
-  );
   const milestones: MileStoneItem[] = [
     {
       version: "Version 1.0",
@@ -46,12 +40,17 @@ const Milestone = () => {
     },
   ];
   return (
-    <section className="flex w-full flex-col  items-center justify-center py-[90px]">
-      <div className="flex w-full max-w-[885px] flex-col items-center justify-center gap-9 pb-[137px]">
+    <section className="flex w-full flex-col  items-center justify-center py-[90px] md:h-screen">
+      <motion.div
+        initial="hidden"
+        variants={fadeIn("up", 0.3)}
+        whileInView={"show"}
+        className="flex w-full max-w-[885px] flex-col items-center justify-center gap-9 pb-[137px]"
+      >
         <div className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent">
           MILESTONE
         </div>
-      </div>
+      </motion.div>
       <div className="relative flex flex-col gap-32 md:gap-60">
         {milestones.map((milestone, index) => {
           return (
@@ -59,11 +58,23 @@ const Milestone = () => {
               className="z-10 flex flex-wrap items-center justify-start md:flex-nowrap md:gap-20"
               ref={!index ? ref : null}
             >
-              <div>{circle}</div>
+              <motion.div
+                initial="hidden"
+                variants={fadeIn("down", 0.4 * (index + 1))}
+                whileInView={"show"}
+              >
+                {/* circle */}
+                {/* shadow-[0_0_30px_rgba(251,191,36,0.5)] rounded-full border-2 border-[#fcd34d] justify-center items-center inline-flex */}
+                <div
+                  className={`flex h-6 w-6 items-center justify-center rounded-full bg-indigo-300 ${milestone.active ? "border-2 border-[#93c5fd] shadow-[0_0_30px_rgba(240,171,252,0.5)]" : ""}`}
+                >
+                  <div className="h-5 w-5 rounded-full bg-indigo-700" />
+                </div>
+              </motion.div>
               <motion.div
                 className="flex flex-col items-center justify-center gap-10 md:flex-row"
                 initial="hidden"
-                variants={fadeIn("right", 0.3 * (index + 1))}
+                variants={fadeIn("down", 0.4 * (index + 1))}
                 whileInView={"show"}
               >
                 <div className="flex flex-grow flex-col flex-nowrap items-center justify-start text-nowrap">
@@ -86,11 +97,18 @@ const Milestone = () => {
         <div
           className={`absolute flex w-6  justify-center top-[${height / 2}px] z-0`}
         >
-          <div
-            className={` w-1 bg-gradient-to-b from-blue-500 via-indigo-400 to-violet-600`}
-            style={{
+          <motion.div
+            initial="hidden"
+            animate={{
               height: `calc(${height * milestones.length}px + ${15 * (milestones.length - 1)}rem)`,
+              transition: {
+                delay: 0.5 * (milestones.length + 1),
+                duration: 1 * (milestones.length + 1),
+                ease: "easeInOut",
+              },
             }}
+            whileInView={"show"}
+            className={`w-1 bg-gradient-to-b from-blue-500 via-indigo-400 to-violet-600`}
           />
         </div>
       </div>

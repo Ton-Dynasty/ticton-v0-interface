@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { fadeIn } from "../animation/fade";
 const Contact = () => {
   const getCommunityNumber = () => {
     const num = Math.floor(Math.random() * 1e6);
@@ -5,7 +7,12 @@ const Contact = () => {
     return num;
   };
   return (
-    <section className="mx-auto flex w-full  max-w-screen-md flex-col items-center justify-center gap-10 rounded-2xl bg-blue-300 px-16 py-10 md:px-20 md:py-20">
+    <motion.section
+      initial="hidden"
+      variants={fadeIn("up", 0.3)}
+      whileInView={"show"}
+      className="mx-auto flex w-full  max-w-screen-md flex-col items-center justify-center gap-10 rounded-2xl bg-blue-300 px-16 py-10 md:px-20 md:py-20"
+    >
       <div className=" leading w-full font-droid text-lg font-bold text-blue-950 md:text-justify md:text-3xl md:leading-10">
         We are a community of dreamers and innovators from around the world who
         are creating a better future and solving the problems of today.
@@ -43,7 +50,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -12,6 +12,8 @@ import {
 import WatchMakerImage from "../../assets/carousel/watchmaker.png";
 import TimeKeeperImage from "../../assets/carousel/timekeeper.png";
 import UserImage from "../../assets/carousel/user.png";
+import { motion } from "framer-motion";
+import { fadeIn } from "../animation/fade";
 
 const RolesCarousel = () => {
   const roles = [
@@ -27,14 +29,14 @@ const RolesCarousel = () => {
       icon: <AlarmClockCheck className="h-full w-full" />,
       override: "text-amber-500",
       selectedStyle:
-        "shadow-[0_0_30px_rgba(251, 191, 36, 0.5)] rounded-full border-2 border-[#fcd34d] justify-center items-center inline-flex",
+        "shadow-[0_0_30px_rgba(251,191,36,0.5)] rounded-full border-2 border-[#fcd34d] justify-center items-center inline-flex",
     },
     {
       name: "Users",
       icon: <UsersRound className="h-full w-full" />,
       override: "text-teal-400",
       selectedStyle:
-        "shadow-[0_0_30px_rgba(45, 212, 191, 0.5)] rounded-full border-2 border-[#2dd4bf] justify-center items-center inline-flex",
+        "shadow-[0_0_30px_rgba(45,212,191,0.5)] rounded-full border-2 border-[#2dd4bf] justify-center items-center inline-flex",
     },
   ];
   const [activeIndex, setActiveIndex] = useState(0);
@@ -111,11 +113,21 @@ const RolesCarousel = () => {
   });
 
   return (
-    <section className="flex w-full flex-col items-center justify-center px-6 py-10">
-      <div className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent">
+    <motion.section className="flex h-screen w-full flex-col items-center justify-center px-6 py-10">
+      <motion.div
+        initial="hidden"
+        variants={fadeIn("up", 0.3)}
+        whileInView={"show"}
+        className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent"
+      >
         Participants
-      </div>
-      <div className="flex w-full flex-row items-center justify-around py-10 md:gap-20 md:py-20">
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        variants={fadeIn("up", 0.3)}
+        whileInView={"show"}
+        className="flex w-full flex-row items-center justify-around py-10 md:gap-20 md:py-20"
+      >
         {roles.map(({ name, icon, override, selectedStyle }, index) => {
           return (
             <Button
@@ -135,9 +147,14 @@ const RolesCarousel = () => {
             </Button>
           );
         })}
-      </div>
+      </motion.div>
 
-      <div className="flex h-auto w-full flex-col items-center justify-center overflow-hidden md:h-96">
+      <motion.div
+        initial="hidden"
+        variants={fadeIn("up", 0.3)}
+        whileInView={"show"}
+        className="flex h-auto w-full flex-col items-center justify-center overflow-hidden md:h-96"
+      >
         <div
           className="relative h-auto whitespace-nowrap transition-transform duration-300 md:h-full"
           style={{ transform: `translate(-${activeIndex * 100}%)` }}
@@ -159,8 +176,8 @@ const RolesCarousel = () => {
             );
           })}
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

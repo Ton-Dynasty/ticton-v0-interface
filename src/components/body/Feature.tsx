@@ -4,14 +4,25 @@ import ImageUnrestricted from "@/assets/feature/unrestricted.png";
 import ImageSafeGuard from "@/assets/feature/safe-guard.png";
 import ImageHighTPS from "@/assets/feature/high-tps.png";
 import { motion } from "framer-motion";
+import { fadeIn } from "../animation/fade";
 
 const Feature = () => {
   return (
-    <section className="flex flex-col items-center justify-center gap-16 py-10">
-      <div className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent">
+    <section className="flex flex-col items-center justify-center gap-16 py-10 md:h-screen">
+      <motion.div
+        initial="hidden"
+        variants={fadeIn("up", 0.3)}
+        whileInView={"show"}
+        className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent"
+      >
         Feature
-      </div>
-      <div className="grid grid-cols-1 gap-6 text-white md:grid-cols-3">
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        variants={fadeIn("up", 0.3)}
+        whileInView={"show"}
+        className="grid grid-cols-1 gap-6 text-white md:grid-cols-3"
+      >
         {/* Decentralization */}
         <motion.button
           whileHover={{ scale: 1.1 }}
@@ -127,7 +138,7 @@ const Feature = () => {
             />
           </div>
         </motion.button>
-      </div>
+      </motion.div>
     </section>
   );
 };

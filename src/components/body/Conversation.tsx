@@ -4,6 +4,8 @@ import WatchMakerAvatar from "../../assets/avatar/watchmaker.png";
 import TimeKeeperAvatar from "../../assets/avatar/timekeeper.png";
 import User from "../../assets/avatar/user.png";
 import Profile from "./Profile";
+import { motion } from "framer-motion";
+import { fadeIn } from "../animation/fade";
 
 const Conversation = () => {
   const handleClickDoc = () => {
@@ -28,7 +30,7 @@ const Conversation = () => {
       ),
       time: "10:00 AM",
       side: "left",
-      delay: 0.3,
+      delay: 0.6,
     },
     {
       avatar: TimeKeeperAvatar,
@@ -61,7 +63,7 @@ const Conversation = () => {
       ),
       time: "11:35 AM",
       side: "right",
-      delay: 1.3,
+      delay: 1.6,
     },
     {
       avatar: WatchMakerAvatar,
@@ -80,7 +82,7 @@ const Conversation = () => {
       ),
       time: "12:26 PM",
       side: "left",
-      delay: 2.3,
+      delay: 2.6,
     },
     {
       avatar: User,
@@ -94,15 +96,25 @@ const Conversation = () => {
       ),
       time: "13:14 PM",
       side: "right",
-      delay: 3.3,
+      delay: 3.6,
     },
   ];
   return (
-    <section className="flex w-full flex-col items-center justify-center px-6 py-10">
-      <div className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent">
+    <section className="flex w-full flex-col items-center justify-center px-6 py-10 md:h-screen">
+      <motion.div
+        initial="hidden"
+        variants={fadeIn("up", 0.3)}
+        whileInView={"show"}
+        className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent"
+      >
         Let’s make it simple
-      </div>
-      <div className="my-10">
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        variants={fadeIn("up", 0.3)}
+        whileInView={"show"}
+        className="my-10"
+      >
         <p className="text-pretty text-center font-duru text-base font-normal text-slate-300">
           We simulate smart contracts into message transmission for explanation
           purposes. Please refer to the{" "}
@@ -114,7 +126,7 @@ const Conversation = () => {
           </button>{" "}
           for more detailed processes.
         </p>
-      </div>
+      </motion.div>
       {/* Conversation */}
       {messages.map((msg, index) => (
         <MessageRow key={index} {...msg} />

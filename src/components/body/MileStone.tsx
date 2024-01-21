@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "../animation/fade";
 import MilestoneImage from "../../assets/milestone.png";
+
 interface MileStoneItem {
   version: string;
   status: string;
@@ -12,10 +13,12 @@ interface MileStoneItem {
 const Milestone = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState<number>(window.innerWidth);
 
   useEffect(() => {
     setHeight(ref?.current?.offsetHeight || 0);
     const handleResize = () => {
+      setWidth(window.innerWidth);
       setHeight(ref?.current?.offsetHeight || 0);
     };
     window.addEventListener("resize", handleResize);
@@ -26,11 +29,18 @@ const Milestone = () => {
 
   const milestones: MileStoneItem[] = [
     {
-      version: "Version 1.0",
+      version: "Beta",
       status: "Testnet",
       content:
         "The Oracle mechanism operates with economic stability, providing reliable price references.",
       active: true,
+    },
+    {
+      version: "Version 1.0",
+      status: "Release",
+      content:
+        "We will release the first version of our product, which will be integrated with the DeFi protocol.",
+      active: false,
     },
     {
       version: "Version 2.0",
@@ -41,7 +51,7 @@ const Milestone = () => {
     },
   ];
   return (
-    <section className="flex w-full flex-col items-center justify-center gap-10 md:min-h-screen">
+    <section className="flex w-full flex-col items-center justify-center gap-10 overflow-hidden md:min-h-screen">
       <motion.div
         initial="hidden"
         variants={fadeIn("up", 0.3)}
@@ -52,19 +62,33 @@ const Milestone = () => {
           MILESTONE
         </div>
       </motion.div>
-      <motion.div
-        initial="hidden"
-        variants={fadeIn("up", 0.3)}
-        whileInView={"show"}
-        className="w-96"
-      >
-        <img src={MilestoneImage} alt="" />
-      </motion.div>
-      <div className="relative flex flex-col gap-32 md:gap-20">
+      <div className=" flex flex-col md:flex-row md:items-end md:justify-center md:gap-5">
+        <motion.div
+          initial="hidden"
+          variants={fadeIn("left", 0.3)}
+          whileInView={"show"}
+          className="shado mb-3 flex w-40 items-center justify-center overflow-hidden rounded-full shadow-lg md:w-80"
+          style={{
+            boxShadow:
+              "20px 20px 60px 30px rgba(221,180,227,0.4), 0 0 30px 20px rgba(240,171,252,0.4) inset",
+          }}
+        >
+          <img src={MilestoneImage} alt="milestone" />
+        </motion.div>
+        <motion.div
+          initial="hidden"
+          variants={fadeIn("right", 0.3)}
+          whileInView={"show"}
+          className="bg-gradient-to-b from-white via-purple-300 to-fuchsia-400 bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent md:bg-gradient-to-r md:bg-gradient-to-r"
+        >
+          WOOHA
+        </motion.div>
+      </div>
+      <div className="relative flex flex-col gap-10 md:gap-20">
         {milestones.map((milestone, index) => {
           return (
             <div
-              className="z-10 flex flex-wrap items-start justify-start md:flex-nowrap md:gap-10"
+              className="z-10 flex  items-start justify-start md:flex-nowrap md:gap-10"
               ref={!index ? ref : null}
             >
               <motion.div
@@ -73,14 +97,21 @@ const Milestone = () => {
                 whileInView={"show"}
               >
                 {/* circle */}
-                <div
+                <motion.div
                   className={`flex h-6 w-6 items-center justify-center rounded-full bg-indigo-300`}
-                  style={{
-                    boxShadow: `${milestone.active ? "0 0 40px 20px #F0ABFC" : ""}`,
+                  animate={{
+                    boxShadow: `${milestone.active ? "0 0 20px 10px #F0ABFC" : ""}`,
+                    transition: {
+                      delay: 0.4,
+                      duration: 1.5,
+                      ease: "easeIn",
+                      repeat: Infinity,
+                      repeatType: "mirror",
+                    },
                   }}
                 >
-                  <div className="h-5 w-5 rounded-full bg-indigo-700" />
-                </div>
+                  <div className={"h-5 w-5 rounded-full bg-indigo-700"} />
+                </motion.div>
               </motion.div>
               <motion.div
                 className="flex flex-col items-start justify-center md:flex-row"
@@ -88,11 +119,11 @@ const Milestone = () => {
                 variants={fadeIn("down", 0.4 * (index + 1))}
                 whileInView={"show"}
               >
-                <div className="flex w-52 -translate-y-1 flex-col flex-nowrap items-start justify-start gap-4 text-nowrap">
-                  <div className="text-center font-doppio text-3xl font-bold text-indigo-300">
+                <div className="flex w-full flex-col flex-nowrap text-nowrap md:w-52 md:-translate-y-1 md:items-start md:justify-start md:gap-4">
+                  <div className="translate-x-10 text-start font-doppio text-3xl font-bold text-indigo-300 md:translate-x-0 md:text-center">
                     {milestone.version}
                   </div>
-                  <div className="font-base text-center font-duru text-lg text-fuchsia-300">
+                  <div className="font-base translate-x-10  text-start font-duru text-lg text-fuchsia-300 md:translate-x-0 md:text-center">
                     {milestone.status}
                   </div>
                 </div>
@@ -111,7 +142,10 @@ const Milestone = () => {
           <motion.div
             initial="hidden"
             animate={{
-              height: `calc(${height * milestones.length}px + ${5 * (milestones.length - 1)}rem)`,
+              height:
+                width < 768
+                  ? `calc(${height * milestones.length}px + ${5 * (milestones.length - 1)}rem + ${1 * (milestones.length - 1)}rem)`
+                  : `calc(${height * milestones.length}px + ${5 * (milestones.length - 1)}rem)`,
               transition: {
                 delay: 0.4,
                 duration: 1 * (milestones.length + 1),

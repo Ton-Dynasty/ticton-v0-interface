@@ -7,29 +7,29 @@ const Introduction = () => {
     {
       title: "TVL",
       value: "$ 87.5B",
-      icon: <Banknote className="w-8 h-8 text-white" />,
+      icon: <Banknote className="h-8 w-8 text-white" />,
     },
     {
       title: "Attendees (24h)",
       value: "+ 78,342",
-      icon: <UsersRound className="w-8 h-8 text-white" />,
+      icon: <UsersRound className="h-8 w-8 text-white" />,
     },
     {
       title: "Reward (TIC)",
       value: "+ 12.3M",
-      icon: <Coins className="w-8 h-8 text-white" />,
+      icon: <Coins className="h-8 w-8 text-white" />,
     },
   ];
   return (
-    <section className="flex flex-col w-full justify-center items-center">
-      <div className="flex flex-col w-full justify-center items-center gap-9">
-        <span className="font-bungee title-gradient text-transparent bg-clip-text py-0 text-lg">
+    <section className="flex h-auto w-full flex-col items-center justify-center">
+      <div className="flex w-full flex-col items-center justify-center gap-9">
+        <div className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent">
           WHAT IS TICTON?
-        </span>
-        <span className="w-full text-center text-slate-300 text-xl md:text-5xl font-bold leading-loose">
+        </div>
+        <span className="w-full text-center text-xl font-bold leading-loose text-slate-300 md:text-5xl">
           Pure Decentralized Oracle on Ton
         </span>
-        <span className="w-full text-justify px-6  md:text-center text-slate-300 text-base font-normal font-duru md:leading-loose leading-normal">
+        <span className="w-full px-6 text-justify  font-duru text-base font-normal leading-normal text-slate-300 md:text-center md:leading-loose">
           Tic Ton oracle stands as the premier fully decentralized oracle on the
           TON platform. Diverging from market-standard final prices set by price
           providers, it employs Game Theory to craft a decentralized network of
@@ -37,23 +37,23 @@ const Introduction = () => {
           mechanisms of arbitrage and bidirectional options, incorporating the
           chain with random data from decentralized price streams.
         </span>
-        <div className="flex flex-col md:flex-row text-white gap-16 md:gap-4 m-4">
-          <div className="flex flex-col justify-between items-center w-auto  md:h-auto md:w-1/2 mx-auto">
+        <div className="m-4 flex flex-col gap-16 text-white md:flex-row md:gap-4">
+          <div className="mx-auto flex w-auto flex-col items-center  justify-between md:h-auto md:w-1/2">
             {data.map(({ title, value, icon }) => (
-              <div className="flex flex-row justify-start items-center w-full gap-4 h-32 md:h-full md:ml-20">
-                <div className="bg-zinc-400 bg-opacity-10 rounded-xl w-14 h-14 flex justify-center items-center md:mx-0">
+              <div className="flex h-32 w-full flex-row items-center justify-start gap-4 md:ml-20 md:h-full">
+                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-zinc-400 bg-opacity-10 md:mx-0">
                   {icon}
                 </div>
                 <div className="flex flex-col">
-                  <p className="font-inter text-left">{title}</p>
-                  <p className="text-white text-2xl font-bold font-inter uppercase text-left">
+                  <p className="text-left font-inter">{title}</p>
+                  <p className="text-left font-inter text-2xl font-bold uppercase text-white">
                     {value}
                   </p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex justify-center md:justify-end md:w-1/2 order-first md:order-none">
+          <div className="order-first flex justify-center md:order-none md:w-1/2 md:justify-end">
             <img src={vibrant3D} alt="" />
           </div>
         </div>

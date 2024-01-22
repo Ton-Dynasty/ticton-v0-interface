@@ -169,7 +169,7 @@ const RolesCarousel = () => {
                     className="h-full w-full max-w-[200px] md:max-w-full"
                   />
                 </div>
-                <div className="flex h-full w-full flex-col items-center justify-around gap-10 md:mx-0 md:w-1/2 md:gap-0">
+                <div className="flex h-full w-full flex-col items-center justify-around gap-10 text-pretty md:mx-0 md:w-1/2 md:gap-0">
                   {item.descriptions.map((description) => description)}
                 </div>
               </div>

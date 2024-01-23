@@ -183,7 +183,10 @@ const RolesCarousel = () => {
                   <div className="flex h-full w-full flex-col gap-5 md:gap-0">
                     {descriptions.map((desc) => {
                       return (
-                        <div className="flex h-full w-full flex-col justify-around">
+                        <div
+                          className="flex h-full w-full flex-col justify-around"
+                          key={`carousel-desc-${index}`}
+                        >
                           {desc}
                         </div>
                       );

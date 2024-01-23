@@ -9,7 +9,6 @@ import { fadeIn } from "../animation/fade";
 
 const Conversation = () => {
   const handleClickDoc = () => {
-    // open documentation in new tab
     window.open("https://ton-dynasty.github.io/ticton-doc/", "_blank");
   };
   const messages: Array<MessageProps> = [

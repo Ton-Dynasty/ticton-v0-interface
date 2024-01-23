@@ -1,55 +1,10 @@
 import { motion } from "framer-motion";
 import { fadeIn } from "../animation/fade";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const Contact = () => {
-  const [communityCount, setCommunityCount] = useState(200);
-  const [animationStarted, setAnimationStarted] = useState(false);
-
-  const target = 30;
+  const [communityCount] = useState(200);
   const maxdigits = 6;
-
-  const handleScroll = () => {
-    if (
-      window.innerHeight + window.scrollY >=
-      document.body.offsetHeight - 200
-    ) {
-      setAnimationStarted(true);
-      window.removeEventListener("scroll", handleScroll);
-    }
-  };
-
-  const easeOutCubic = (t: number) => t * t * t + 1;
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
-
-  useEffect(() => {
-    if (!animationStarted) return;
-
-    let start: number = 0;
-    const duration = 5000; // Duration in milliseconds
-
-    const frame = (timestamp: number) => {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-
-      const easedProgress = easeOutCubic(progress);
-
-      setCommunityCount(Math.round(Math.min(easedProgress * target, target)));
-
-      if (progress < duration) {
-        requestAnimationFrame(frame);
-      }
-    };
-
-    requestAnimationFrame(frame);
-  }, [animationStarted, target]);
 
   return (
     <motion.section
@@ -74,12 +29,17 @@ const Contact = () => {
                 (maxdigits - index) % 3 === 0 &&
                 index !== communityCount - 1
               ) {
-                seperator = <div className="md:m-0.5" />;
+                seperator = (
+                  <div className="md:m-0.5" key={`seperator-${index}`} />
+                );
               }
               return (
                 <>
                   {seperator}
-                  <div className="flex items-center justify-center rounded-lg bg-indigo-950 px-3 py-2 text-xl text-white  md:rounded-2xl md:px-4 md:py-3 md:text-2xl">
+                  <div
+                    className="flex items-center justify-center rounded-lg bg-indigo-950 px-3 py-2 text-xl text-white  md:rounded-2xl md:px-4 md:py-3 md:text-2xl"
+                    key={`digit-${index}`}
+                  >
                     {digit}
                   </div>
                 </>

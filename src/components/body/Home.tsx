@@ -25,6 +25,7 @@ const Home = () => {
             <Button
               variant={"home"}
               className="p-0.5"
+              key={`home-${text}`}
               onClick={() => {
                 window.open(href, "_blank");
               }}

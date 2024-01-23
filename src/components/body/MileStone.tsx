@@ -90,6 +90,7 @@ const Milestone = () => {
             <div
               className="z-10 flex  items-start justify-start md:flex-nowrap md:gap-10"
               ref={!index ? ref : null}
+              key={`milestone-${index}`}
             >
               <motion.div
                 initial="hidden"

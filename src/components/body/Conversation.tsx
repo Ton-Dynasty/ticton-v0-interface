@@ -100,7 +100,7 @@ const Conversation = () => {
   ];
   return (
     <div className="backdrop-blur-lg">
-      <div className="bg-star-right">
+      <div className="bg-star-right bg-radial-right">
         <section className="flex w-full flex-col items-center justify-center px-6 py-10 md:min-h-screen">
           <motion.div
             initial="hidden"

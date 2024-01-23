@@ -77,7 +77,8 @@
 
 @layer components {
   section {
-    @apply relative mx-auto max-w-screen-md overflow-x-hidden px-4;
+    @apply mx-auto max-w-screen-md overflow-hidden px-4;
+    z-index: 3;
   }
   .title-gradient {
     background: linear-gradient(
@@ -112,6 +113,52 @@
     background-size: 150vw 100%;
     opacity: 0.4;
     filter: blur(2rem);
+    z-index: -1;
+  }
+
+  /* radial-gradient(#60a5fa 30%, #5c6bc0 20%, #f400a1 60%) */
+
+  .bg-star-right {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-star-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: right;
+    background-image: url("./assets/starlight.svg"),
+      radial-gradient(
+        rgba(244, 0, 161, 0.3),
+        rgba(96, 165, 250, 0.4),
+        rgba(92, 107, 192, 0.2) 20%,
+        rgb(2, 6, 23, 1) 50%
+      );
+    background-repeat: no-repeat, no-repeat;
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  .bg-star-left {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-star-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: left;
+    background-image: url("./assets/starlight.svg");
+    background-repeat: no-repeat;
+    opacity: 0.3;
     z-index: -1;
   }
 }

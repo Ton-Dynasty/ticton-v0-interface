@@ -9,7 +9,6 @@ import { fadeIn } from "../animation/fade";
 
 const Conversation = () => {
   const handleClickDoc = () => {
-    // open documentation in new tab
     window.open("https://ton-dynasty.github.io/ticton-doc/", "_blank");
   };
   const messages: Array<MessageProps> = [
@@ -17,8 +16,8 @@ const Conversation = () => {
       avatar: WatchMakerAvatar,
       profile: <Profile name="Jacky" role="Watchmaker" />,
       content: (
-        <div className="flex-wrap md:inline-flex md:items-center md:justify-center">
-          <div className="font-sora text-sm font-normal text-zinc-100 text-opacity-80 md:text-base">
+        <div className="flex flex-col gap-2 md:inline-flex md:flex-row md:items-center md:justify-center md:gap-0">
+          <div className="translate-x-2 font-sora text-sm font-normal text-zinc-100 text-opacity-80 md:translate-x-0 md:text-base">
             I think{" "}
           </div>
           <div className="flex items-center justify-start gap-2.5 rounded-3xl bg-indigo-300 bg-opacity-20 px-3 py-1 md:mx-2">
@@ -63,7 +62,7 @@ const Conversation = () => {
       ),
       time: "11:35 AM",
       side: "right",
-      delay: 1.6,
+      delay: 1,
     },
     {
       avatar: WatchMakerAvatar,
@@ -82,56 +81,60 @@ const Conversation = () => {
       ),
       time: "12:26 PM",
       side: "left",
-      delay: 2.6,
+      delay: 1.4,
     },
     {
       avatar: User,
       profile: <Profile name="Maxey" role="User" />,
       content: (
         <>
-          <div className="max-w-72 shrink grow basis-0 font-sora text-base font-normal leading-loose text-white">
+          <div className="max-w-72 shrink grow basis-0 font-sora text-base font-normal text-white md:leading-loose">
             As a lending protocol, I need to get accurate price for liquidation.{" "}
           </div>
         </>
       ),
       time: "13:14 PM",
       side: "right",
-      delay: 3.6,
+      delay: 1.8,
     },
   ];
   return (
-    <section className="flex w-full flex-col items-center justify-center px-6 py-10 md:min-h-screen">
-      <motion.div
-        initial="hidden"
-        variants={fadeIn("up", 0.3)}
-        whileInView={"show"}
-        className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent"
-      >
-        Let’s make it simple
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        variants={fadeIn("up", 0.3)}
-        whileInView={"show"}
-        className="my-10"
-      >
-        <p className="text-pretty text-center font-duru text-base font-normal text-slate-300">
-          We simulate smart contracts into message transmission for explanation
-          purposes. Please refer to the{" "}
-          <button
-            className="inline-flex items-center font-duru text-base font-normal leading-3 text-blue-400"
-            onClick={handleClickDoc}
+    <div className="backdrop-blur-lg">
+      <div className="bg-star-right bg-radial-right">
+        <section className="flex w-full flex-col items-center justify-center px-6 py-10 md:min-h-screen">
+          <motion.div
+            initial="hidden"
+            variants={fadeIn("up", 0.3)}
+            whileInView={"show"}
+            className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent"
           >
-            documentation <MousePointer2 fill="rgb(96 165 250)" />
-          </button>{" "}
-          for more detailed processes.
-        </p>
-      </motion.div>
-      {/* Conversation */}
-      {messages.map((msg, index) => (
-        <MessageRow key={index} {...msg} />
-      ))}
-    </section>
+            Let’s make it simple
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            variants={fadeIn("up", 0.3)}
+            whileInView={"show"}
+            className="my-10"
+          >
+            <p className="text-pretty text-center font-duru text-base font-normal text-slate-300">
+              We simulate smart contracts into message transmission for
+              explanation purposes. Please refer to the{" "}
+              <button
+                className="inline-flex items-center font-duru text-base font-normal leading-3 text-blue-400"
+                onClick={handleClickDoc}
+              >
+                documentation <MousePointer2 fill="rgb(96 165 250)" />
+              </button>{" "}
+              for more detailed processes.
+            </p>
+          </motion.div>
+          {/* Conversation */}
+          {messages.map((msg, index) => (
+            <MessageRow key={index} {...msg} />
+          ))}
+        </section>
+      </div>
+    </div>
   );
 };
 

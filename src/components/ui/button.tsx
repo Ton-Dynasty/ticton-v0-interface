@@ -20,7 +20,7 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
         home: "bg-gradient-to-br from-blue-300 via-blue-400 to-indigo-500 rounded-[25px] hover:bg-primary/90 font-semibold rounded-full",
         launch:
-          "bg-gradient-to-t from-[#8F96E666] to-[#60A5FA66] rounded-[25px] text-[#BFDBFE] hover:bg-primary/90 baloo launch-btn-text",
+          "bg-gradient-to-t from-[#8F96E666] to-[#60A5FA66] rounded-[25px] text-[#BFDBFE] hover:bg-primary/90 baloo",
       },
       size: {
         default: "",

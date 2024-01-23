@@ -13,7 +13,7 @@ const Feature = () => {
         initial="hidden"
         variants={fadeIn("up", 0.3)}
         whileInView={"show"}
-        className="bg-gradient-to-r from-white via-purple-300 to-fuchsia-400 bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent drop-shadow-lg [text-shadow:4px_4px_2px_rgb(254_200_225_/_40%)]"
+        className="bg-gradient-to-r from-white via-purple-300 to-fuchsia-400 bg-clip-text text-center font-bungee text-3xl font-normal leading-9 text-transparent drop-shadow-lg [text-shadow:4px_4px_2px_rgb(254_200_225_/_40%)] md:text-4xl"
       >
         Feature
       </motion.div>
@@ -27,7 +27,7 @@ const Feature = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="inline-flex w-full flex-col items-center justify-start gap-6 rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:h-96"
+          className=" inline-flex w-full select-none flex-col items-center justify-start gap-6 rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:h-96"
         >
           <div className="flex h-24 flex-col items-center justify-center gap-6 md:h-36">
             <div className="flex h-24 flex-col items-center justify-center gap-2 self-stretch md:h-36">
@@ -50,7 +50,7 @@ const Feature = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="inline-flex w-full flex-col items-center justify-start gap-6 rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:h-96"
+          className=" inline-flex w-full select-none flex-col items-center justify-start gap-6 rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:h-96"
         >
           <div className="flex h-24 flex-col items-center justify-center gap-6 md:h-36">
             <div className="flex h-24 flex-col items-center justify-center gap-2 self-stretch md:h-36">
@@ -73,7 +73,7 @@ const Feature = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="inline-flex w-full flex-col items-center justify-start gap-6 rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:h-96"
+          className=" inline-flex w-full select-none flex-col items-center justify-start gap-6 rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:h-96"
         >
           <div className="flex h-24 flex-col items-center justify-center gap-6 md:h-36">
             <div className="flex h-24 flex-col items-center justify-center gap-2 self-stretch md:h-36">
@@ -96,7 +96,7 @@ const Feature = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="w-full  items-center rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:col-span-3 md:flex md:h-52 md:justify-evenly md:gap-6 md:px-0 md:pt-0"
+          className=" w-full select-none  items-center rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:col-span-3 md:flex md:h-52 md:justify-evenly md:gap-6 md:px-0 md:pt-0"
         >
           <div className="flex h-24 flex-col items-center justify-center gap-6 md:order-last md:h-36 md:flex-row">
             <div className="flex h-24 flex-col items-center justify-center gap-2 self-stretch md:h-36">
@@ -119,7 +119,7 @@ const Feature = () => {
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="w-full items-center rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:col-span-3 md:flex md:h-52 md:justify-evenly md:gap-6 md:px-0 md:pt-0"
+          className=" w-full select-none items-center rounded-2xl bg-indigo-400 bg-opacity-10 px-2 pt-8 md:col-span-3 md:flex md:h-52 md:justify-evenly md:gap-6 md:px-0 md:pt-0"
         >
           <div className="flex h-24 flex-col items-center justify-center gap-6 md:order-first md:h-36 md:flex-row">
             <div className="flex h-24 flex-col items-center justify-center gap-2 self-stretch md:h-36">

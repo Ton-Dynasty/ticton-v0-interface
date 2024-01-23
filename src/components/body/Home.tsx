@@ -9,7 +9,10 @@ const Home = () => {
   ];
   return (
     <div className="backdrop-blur-lg">
-      <section className="bg-flow flex h-screen w-full max-w-full flex-col  items-center justify-center gap-9">
+      <section
+        className={`bg-flow flex w-full max-w-full  flex-col items-center justify-center gap-9`}
+        style={{ height: `calc(100vh - ${4}rem)` }}
+      >
         <img
           src={TicTonLogo}
           className=" m-3 h-28 w-28 rounded-full p-1 "

@@ -17,8 +17,8 @@ const Conversation = () => {
       avatar: WatchMakerAvatar,
       profile: <Profile name="Jacky" role="Watchmaker" />,
       content: (
-        <div className="flex-wrap md:inline-flex md:items-center md:justify-center">
-          <div className="font-sora text-sm font-normal text-zinc-100 text-opacity-80 md:text-base">
+        <div className="flex flex-col gap-2 md:inline-flex md:flex-row md:items-center md:justify-center md:gap-0">
+          <div className="translate-x-2 font-sora text-sm font-normal text-zinc-100 text-opacity-80 md:translate-x-0 md:text-base">
             I think{" "}
           </div>
           <div className="flex items-center justify-start gap-2.5 rounded-3xl bg-indigo-300 bg-opacity-20 px-3 py-1 md:mx-2">

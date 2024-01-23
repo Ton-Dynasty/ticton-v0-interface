@@ -1,9 +1,12 @@
 import { Variants } from "framer-motion";
 
 export const fadeIn = (
-  direction: "up" | "down" | "left" | "right",
+  direction: "up" | "down" | "left" | "right" | "none" = "none",
   delay: number = 0.2,
 ): Variants => {
+  if (direction === "none") {
+    return {};
+  }
   return {
     hidden: {
       y: direction === "up" ? 80 : direction === "down" ? -80 : 0,

@@ -34,7 +34,7 @@ const Introduction = () => {
         </motion.div>
         <motion.span
           initial="hidden"
-          variants={fadeIn("up", 0.4)}
+          variants={fadeIn("up", 0.3)}
           whileInView={"show"}
           className="w-full text-center text-xl font-bold leading-loose text-slate-300 md:text-5xl"
         >
@@ -42,9 +42,9 @@ const Introduction = () => {
         </motion.span>
         <motion.span
           initial="hidden"
-          variants={fadeIn("up", 0.5)}
+          variants={fadeIn("up", 0.3)}
           whileInView={"show"}
-          className="w-full px-6 font-duru text-base font-normal leading-normal text-slate-300 md:text-center md:leading-loose"
+          className="w-full text-pretty px-6 font-duru text-base font-normal leading-normal text-slate-300 md:text-center md:leading-loose"
         >
           Tic Ton oracle stands as the premier fully decentralized oracle on the
           TON platform. Diverging from market-standard final prices set by price
@@ -53,10 +53,10 @@ const Introduction = () => {
           mechanisms of arbitrage and bidirectional options, incorporating the
           chain with random data from decentralized price streams.
         </motion.span>
-        <div className="m-4 flex flex-col gap-16 text-white md:flex-row md:gap-4">
+        <div className="m-4 flex flex-col gap-2 text-white md:flex-row md:gap-4">
           <motion.div
             initial="hidden"
-            variants={fadeIn("left", 0.6)}
+            variants={fadeIn("left", 0.3)}
             whileInView={"show"}
             className="mx-auto flex w-auto flex-col items-center  justify-between md:h-auto md:w-1/2"
           >
@@ -76,7 +76,7 @@ const Introduction = () => {
           </motion.div>
           <motion.div
             initial="hidden"
-            variants={fadeIn("right", 0.7)}
+            variants={fadeIn("right", 0.3)}
             whileInView={"show"}
             className="order-first flex justify-center md:order-none md:w-1/2 md:justify-end"
           >

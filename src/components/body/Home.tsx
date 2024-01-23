@@ -9,13 +9,13 @@ const Home = () => {
   ];
   return (
     <div className="backdrop-blur-lg">
-      <section className="bg-flow flex h-[50rem] w-full max-w-full flex-col  items-center justify-center gap-9	backdrop-blur-2xl md:h-screen">
+      <section className="bg-flow flex h-screen w-full max-w-full flex-col  items-center justify-center gap-9	backdrop-blur-2xl">
         <img
           src={TicTonLogo}
           className=" m-3 h-28 w-28 rounded-full p-1 "
         ></img>
         <span className="title-gradient bg-clip-text py-0 text-center font-baloo-da text-4xl font-bold text-transparent md:text-6xl">
-          Tick-Tock, Tic Ton.
+          Tick Tock, Tic Ton.
         </span>
         <span className="w-full text-center font-baloo-da text-2xl font-normal text-slate-300 md:text-3xl">
           Arbitrage and integrate with the leading decentralized oracle on TON.

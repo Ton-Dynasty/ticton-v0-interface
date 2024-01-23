@@ -89,7 +89,7 @@ const Conversation = () => {
       profile: <Profile name="Maxey" role="User" />,
       content: (
         <>
-          <div className="max-w-72 shrink grow basis-0 font-sora text-base font-normal leading-loose text-white">
+          <div className="max-w-72 shrink grow basis-0 font-sora text-base font-normal text-white md:leading-loose">
             As a lending protocol, I need to get accurate price for liquidation.{" "}
           </div>
         </>

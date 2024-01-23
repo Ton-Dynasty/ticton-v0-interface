@@ -171,22 +171,16 @@ const RolesCarousel = () => {
           ]}
         >
           <CarouselContent>
-            {carouselItems.map(({ imageUrl, descriptions }, index) => {
+            {carouselItems.map(({ imageUrl, descriptions }) => {
               return (
-                <CarouselItem
-                  key={`carousel-page-${index}`}
-                  className="flex flex-col items-center justify-center gap-4 text-white md:flex-row"
-                >
+                <CarouselItem className="flex flex-col items-center justify-center gap-4 text-white md:flex-row">
                   <div className="flex w-48 items-center justify-center md:w-full">
                     <img src={imageUrl} className="h-full w-full" />
                   </div>
                   <div className="flex h-full w-full flex-col gap-5 md:gap-0">
                     {descriptions.map((desc) => {
                       return (
-                        <div
-                          className="flex h-full w-full flex-col justify-around"
-                          key={`carousel-desc-${index}`}
-                        >
+                        <div className="flex h-full w-full flex-col justify-around">
                           {desc}
                         </div>
                       );

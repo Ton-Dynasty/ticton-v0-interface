@@ -78,6 +78,7 @@
 @layer components {
   section {
     @apply mx-auto max-w-screen-md overflow-hidden px-4;
+    z-index: 3;
   }
   .title-gradient {
     background: linear-gradient(
@@ -114,24 +115,42 @@
     filter: blur(2rem);
     z-index: -1;
   }
-  /* 
-  .bg-star {
+
+  .bg-star-right {
     position: relative;
     overflow: hidden;
   }
 
-  .bg-star::before {
+  .bg-star-right::before {
     content: "";
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    background-position: right;
     background-image: url("./assets/starlight.svg");
     background-repeat: no-repeat;
-    background-size: 150vw 100%;
-    opacity: 0.4;
-    filter: blur(2rem);
+    opacity: 0.3;
     z-index: -1;
-  } */
+  }
+
+  .bg-star-left {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-star-left::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: left;
+    background-image: url("./assets/starlight.svg");
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+  }
 }

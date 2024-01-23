@@ -99,38 +99,42 @@ const Conversation = () => {
     },
   ];
   return (
-    <section className="flex w-full flex-col items-center justify-center px-6 py-10 md:min-h-screen">
-      <motion.div
-        initial="hidden"
-        variants={fadeIn("up", 0.3)}
-        whileInView={"show"}
-        className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent"
-      >
-        Let’s make it simple
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        variants={fadeIn("up", 0.3)}
-        whileInView={"show"}
-        className="my-10"
-      >
-        <p className="text-pretty text-center font-duru text-base font-normal text-slate-300">
-          We simulate smart contracts into message transmission for explanation
-          purposes. Please refer to the{" "}
-          <button
-            className="inline-flex items-center font-duru text-base font-normal leading-3 text-blue-400"
-            onClick={handleClickDoc}
+    <div className="backdrop-blur-lg">
+      <div className="bg-star-right">
+        <section className="flex w-full flex-col items-center justify-center px-6 py-10 md:min-h-screen">
+          <motion.div
+            initial="hidden"
+            variants={fadeIn("up", 0.3)}
+            whileInView={"show"}
+            className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent"
           >
-            documentation <MousePointer2 fill="rgb(96 165 250)" />
-          </button>{" "}
-          for more detailed processes.
-        </p>
-      </motion.div>
-      {/* Conversation */}
-      {messages.map((msg, index) => (
-        <MessageRow key={index} {...msg} />
-      ))}
-    </section>
+            Let’s make it simple
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            variants={fadeIn("up", 0.3)}
+            whileInView={"show"}
+            className="my-10"
+          >
+            <p className="text-pretty text-center font-duru text-base font-normal text-slate-300">
+              We simulate smart contracts into message transmission for
+              explanation purposes. Please refer to the{" "}
+              <button
+                className="inline-flex items-center font-duru text-base font-normal leading-3 text-blue-400"
+                onClick={handleClickDoc}
+              >
+                documentation <MousePointer2 fill="rgb(96 165 250)" />
+              </button>{" "}
+              for more detailed processes.
+            </p>
+          </motion.div>
+          {/* Conversation */}
+          {messages.map((msg, index) => (
+            <MessageRow key={index} {...msg} />
+          ))}
+        </section>
+      </div>
+    </div>
   );
 };
 

@@ -13,7 +13,7 @@ const Feature = () => {
         initial="hidden"
         variants={fadeIn("up", 0.3)}
         whileInView={"show"}
-        className="bg-gradient-to-r from-white via-purple-300 to-fuchsia-400 bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent drop-shadow-lg [text-shadow:4px_4px_2px_rgb(254_200_225_/_40%)]"
+        className="bg-gradient-to-r from-white via-purple-300 to-fuchsia-400 bg-clip-text text-center font-bungee text-3xl font-normal leading-9 text-transparent drop-shadow-lg [text-shadow:4px_4px_2px_rgb(254_200_225_/_40%)] md:text-4xl"
       >
         Feature
       </motion.div>

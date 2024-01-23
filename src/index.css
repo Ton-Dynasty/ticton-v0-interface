@@ -77,7 +77,7 @@
 
 @layer components {
   section {
-    @apply relative mx-auto max-w-screen-md overflow-x-hidden px-4;
+    @apply mx-auto max-w-screen-md overflow-hidden px-4;
   }
   .title-gradient {
     background: linear-gradient(
@@ -114,4 +114,24 @@
     filter: blur(2rem);
     z-index: -1;
   }
+  /* 
+  .bg-star {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-star::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url("./assets/starlight.svg");
+    background-repeat: no-repeat;
+    background-size: 150vw 100%;
+    opacity: 0.4;
+    filter: blur(2rem);
+    z-index: -1;
+  } */
 }

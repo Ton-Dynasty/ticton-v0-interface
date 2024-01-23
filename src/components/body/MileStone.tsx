@@ -54,7 +54,7 @@ const Milestone = () => {
     <section className="flex w-full flex-col items-center justify-center gap-10 overflow-hidden md:min-h-screen">
       <motion.div
         initial="hidden"
-        variants={fadeIn("up", 0.3)}
+        variants={fadeIn("down", 0.3)}
         whileInView={"show"}
         className=" flex w-full flex-col items-center justify-center gap-9"
       >
@@ -65,7 +65,7 @@ const Milestone = () => {
       <div className=" flex flex-col md:flex-row md:items-end md:justify-center md:gap-5">
         <motion.div
           initial="hidden"
-          variants={fadeIn("left", 0.2)}
+          variants={fadeIn(`${width < 768 ? "down" : "left"}`, 0.2)}
           whileInView={"show"}
           className="shado mb-3 flex w-40 items-center justify-center overflow-hidden rounded-full shadow-lg md:w-80"
           style={{
@@ -77,7 +77,7 @@ const Milestone = () => {
         </motion.div>
         <motion.div
           initial="hidden"
-          variants={fadeIn("right", 0.2)}
+          variants={fadeIn(`${width < 768 ? "down" : "right"}`, 0.2)}
           whileInView={"show"}
           className="bg-gradient-to-b from-white via-purple-300 to-fuchsia-400 bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent md:bg-gradient-to-r"
         >

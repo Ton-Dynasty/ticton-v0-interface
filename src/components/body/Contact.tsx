@@ -56,7 +56,7 @@ const Contact = () => {
       initial="hidden"
       variants={fadeIn("up", 0.3)}
       whileInView={"show"}
-      className=" mx-auto flex w-full  max-w-screen-md flex-col items-center justify-center gap-10 rounded-bl-lg rounded-br-[3rem] rounded-tl-[3rem] rounded-tr-lg bg-violet-300 px-16 py-10 md:px-20 md:py-20"
+      className=" mx-auto flex w-full max-w-screen-md  select-none flex-col items-center justify-center gap-10 rounded-bl-lg rounded-br-[3rem] rounded-tl-[3rem] rounded-tr-lg bg-violet-300 px-16 py-10 md:px-20 md:py-20"
     >
       <div className="leading w-full text-pretty font-droid text-lg font-bold text-blue-950 md:text-3xl">
         We are a community of dreamers and innovators from around the world who

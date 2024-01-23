@@ -63,7 +63,7 @@ const Conversation = () => {
       ),
       time: "11:35 AM",
       side: "right",
-      delay: 1.6,
+      delay: 1,
     },
     {
       avatar: WatchMakerAvatar,
@@ -82,7 +82,7 @@ const Conversation = () => {
       ),
       time: "12:26 PM",
       side: "left",
-      delay: 2.6,
+      delay: 1.4,
     },
     {
       avatar: User,
@@ -96,7 +96,7 @@ const Conversation = () => {
       ),
       time: "13:14 PM",
       side: "right",
-      delay: 3.6,
+      delay: 1.8,
     },
   ];
   return (

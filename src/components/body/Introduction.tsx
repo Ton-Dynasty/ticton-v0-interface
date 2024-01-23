@@ -30,8 +30,8 @@ const Introduction = () => {
             opacity: 1,
             transition: {
               type: "tween",
-              ease: "easeIn",
-              duration: 1,
+              ease: "easeOut",
+              duration: 1.2,
               delay: 0.1,
             },
           }}
@@ -45,8 +45,8 @@ const Introduction = () => {
             opacity: 1,
             transition: {
               type: "tween",
-              ease: "easeIn",
-              duration: 1,
+              ease: "easeOut",
+              duration: 1.2,
               delay: 0.3,
             },
           }}
@@ -58,7 +58,7 @@ const Introduction = () => {
           initial={{ opacity: 0 }}
           whileInView={{
             opacity: 1,
-            transition: { ease: "easeIn", duration: 1, delay: 0.3 },
+            transition: { ease: "easeOut", duration: 1.2, delay: 0.3 },
           }}
           className="w-full text-pretty px-6 font-duru text-base font-normal leading-normal text-slate-300 md:text-center md:leading-loose"
         >
@@ -74,7 +74,7 @@ const Introduction = () => {
             initial={{ opacity: 0 }}
             whileInView={{
               opacity: 1,
-              transition: { ease: "easeIn", duration: 1, delay: 0.3 },
+              transition: { ease: "easeOut", duration: 1.2, delay: 0.3 },
             }}
             className="mx-auto flex w-auto flex-col items-center  justify-between md:h-auto md:w-1/2"
           >
@@ -99,7 +99,7 @@ const Introduction = () => {
             initial={{ opacity: 0 }}
             whileInView={{
               opacity: 1,
-              transition: { ease: "easeIn", duration: 1, delay: 0.3 },
+              transition: { ease: "easeOut", duration: 1.2, delay: 0.3 },
             }}
             className="order-first flex justify-center md:order-none md:w-1/2 md:justify-end"
           >

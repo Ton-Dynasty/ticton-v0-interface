@@ -14,6 +14,13 @@ import TimeKeeperImage from "../../assets/carousel/timekeeper.png";
 import UserImage from "../../assets/carousel/user.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../animation/fade";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import { type CarouselApi } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const RolesCarousel = () => {
   const roles = [
@@ -40,27 +47,27 @@ const RolesCarousel = () => {
     },
   ];
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const [api, setApi] = useState<CarouselApi>();
   const carouselItems = [
     {
       imageUrl: WatchMakerImage,
       descriptions: [
         <div>
-          <div className="mb-2 flex items-center justify-start font-doppio text-3xl font-normal text-blue-300">
-            <Clock className=" mr-4" />
-            <span>Tick</span>
+          <div className="mb-2 flex w-full items-center justify-start font-doppio text-3xl font-normal text-blue-300">
+            <Clock />
+            <span className=" translate-x-4">Tick</span>
           </div>
-          <div className=" text-wrap font-droid text-lg font-normal leading-tight text-slate-300 ">
+          <div className="w-full text-pretty font-droid text-base font-normal leading-tight text-slate-300">
             Open a trading position with Tick method; if the position is not
             arbitrated, you can receive Tic tokens as a reward by Ring method.
           </div>
         </div>,
         <div>
-          <div className="mb-2 flex items-center justify-start font-doppio text-3xl font-normal text-red-400">
-            <BellRing className=" mr-4" />
-            <span>Ring</span>
+          <div className="mb-2 flex w-full items-center justify-start font-doppio text-3xl font-normal text-red-400">
+            <BellRing />
+            <span className=" translate-x-4">Ring</span>
           </div>
-          <div className=" text-wrap font-droid text-lg font-normal leading-tight text-slate-300">
+          <div className="text-pretty font-droid text-base font-normal leading-tight text-slate-300">
             Close your Ring positions and withdraw assets and token rewards from
             oracle.
           </div>
@@ -72,10 +79,10 @@ const RolesCarousel = () => {
       descriptions: [
         <div>
           <div className="mb-2 flex items-center justify-start font-doppio text-3xl font-normal text-amber-300">
-            <Wind className=" mr-4" />
-            <span>Wind</span>
+            <Wind className="" />
+            <span className=" translate-x-4">Wind</span>
           </div>
-          <div className=" text-wrap font-droid text-lg font-normal leading-tight text-slate-300">
+          <div className=" text-pretty font-droid text-lg font-normal leading-tight text-slate-300">
             If prices in other alerts are imprecise, TimeKeeper can arbitrage
             through the Wind Method. However, to demonstrate economic
             responsibility, they must collateralize assets to become a new
@@ -89,10 +96,10 @@ const RolesCarousel = () => {
       descriptions: [
         <div>
           <div className="mb-2 flex items-center justify-start font-doppio text-3xl font-normal text-teal-300">
-            <CheckCircle2 className=" mr-4" />
-            <span>Check</span>
+            <CheckCircle2 />
+            <span className=" translate-x-4">Check</span>
           </div>
-          <div className=" text-wrap font-droid text-lg font-normal leading-tight text-slate-300">
+          <div className=" text-pretty font-droid text-lg font-normal leading-tight text-slate-300">
             Users or other protocols can access our real-time latest prices or
             weighted prices for a small fee.
           </div>
@@ -102,15 +109,12 @@ const RolesCarousel = () => {
   ];
 
   useEffect(() => {
-    const autoPlay = setInterval(() => {
-      if (activeIndex === 2) {
-        setActiveIndex(0);
-      } else {
-        setActiveIndex(activeIndex + 1);
-      }
-    }, 5000);
-    return () => clearInterval(autoPlay);
-  });
+    if (!api) return;
+    setActiveIndex(api.selectedScrollSnap());
+    api.on("select", () => {
+      setActiveIndex(api.selectedScrollSnap());
+    });
+  }, [api]);
 
   return (
     <motion.section className="flex w-full flex-col items-center justify-center px-6 py-10 md:h-screen">
@@ -131,10 +135,11 @@ const RolesCarousel = () => {
         {roles.map(({ name, icon, override, selectedStyle }, index) => {
           return (
             <Button
+              key={`roles-${name}`}
               className={`inline-flex bg-transparent px-3 py-1 ${override} gap-2 rounded-full ${
                 activeIndex === index && selectedStyle
               }`}
-              onClick={() => setActiveIndex(index)}
+              onClick={() => api?.scrollTo(index)}
             >
               <div className="md:h-10 md:w-10">{icon}</div>
               <div
@@ -153,29 +158,41 @@ const RolesCarousel = () => {
         initial="hidden"
         variants={fadeIn("up", 0.3)}
         whileInView={"show"}
-        className="flex h-auto w-full flex-col items-center justify-center overflow-hidden md:h-96"
       >
-        <div
-          className="relative h-auto whitespace-nowrap transition-transform duration-300 md:h-full"
-          style={{ transform: `translate(-${activeIndex * 100}%)` }}
+        <Carousel
+          className="w-full"
+          setApi={setApi}
+          opts={{ align: "start", loop: true }}
+          plugins={[
+            Autoplay({
+              delay: 5000,
+            }),
+          ]}
         >
-          {carouselItems.map((item) => {
-            return (
-              <div className="inline-flex h-auto w-full flex-col justify-center gap-10 md:h-full md:flex-row">
-                <div className="flex h-auto w-full  items-center justify-center md:h-full md:w-1/2 md:max-w-full">
-                  <img
-                    src={item.imageUrl}
-                    alt={item.imageUrl}
-                    className="h-full w-full max-w-[200px] md:max-w-full"
-                  />
-                </div>
-                <div className="flex h-full w-full flex-col items-center justify-around gap-10 text-pretty md:mx-0 md:w-1/2 md:gap-0">
-                  {item.descriptions.map((description) => description)}
-                </div>
-              </div>
-            );
-          })}
-        </div>
+          <CarouselContent>
+            {carouselItems.map(({ imageUrl, descriptions }, index) => {
+              return (
+                <CarouselItem
+                  key={`carousel-page-${index}`}
+                  className="flex flex-col items-center justify-center gap-4 text-white md:flex-row"
+                >
+                  <div className="flex w-48 items-center justify-center md:w-full">
+                    <img src={imageUrl} className="h-full w-full" />
+                  </div>
+                  <div className="flex h-full w-full flex-col gap-5 md:gap-0">
+                    {descriptions.map((desc) => {
+                      return (
+                        <div className="flex h-full w-full flex-col justify-around">
+                          {desc}
+                        </div>
+                      );
+                    })}
+                  </div>
+                </CarouselItem>
+              );
+            })}
+          </CarouselContent>
+        </Carousel>
       </motion.div>
     </motion.section>
   );

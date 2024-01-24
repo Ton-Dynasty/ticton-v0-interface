@@ -135,8 +135,8 @@
       radial-gradient(
         rgba(244, 0, 161, 0.3),
         rgba(96, 165, 250, 0.4),
-        rgba(92, 107, 192, 0.2) 20%,
-        rgb(2, 6, 23, 1) 50%
+        rgba(92, 107, 192, 0.2),
+        rgb(2, 6, 23, 1)
       );
     background-repeat: no-repeat, no-repeat;
     opacity: 0.2;
@@ -158,6 +158,25 @@
     background-position: left;
     background-image: url("./assets/starlight.svg");
     background-repeat: no-repeat;
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  .bg-star-center {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-star-center::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: center;
+    background-image: url("./assets/starlight.svg");
+    background-repeat: repeat-x;
     opacity: 0.3;
     z-index: -1;
   }

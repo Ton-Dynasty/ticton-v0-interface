@@ -117,82 +117,86 @@ const RolesCarousel = () => {
   }, [api]);
 
   return (
-    <motion.section className="flex w-full flex-col items-center justify-center px-6 py-10 md:h-screen">
-      <motion.div
-        initial="hidden"
-        variants={fadeIn("up", 0.3)}
-        whileInView={"show"}
-        className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent"
-      >
-        Participants
-      </motion.div>
-      <motion.div
-        initial="hidden"
-        variants={fadeIn("up", 0.3)}
-        whileInView={"show"}
-        className="flex w-full flex-row items-center justify-around py-10 md:gap-20 md:py-20"
-      >
-        {roles.map(({ name, icon, override, selectedStyle }, index) => {
-          return (
-            <Button
-              key={`roles-${name}`}
-              className={`inline-flex bg-transparent px-3 py-1 ${override} gap-2 rounded-full ${
-                activeIndex === index && selectedStyle
-              }`}
-              onClick={() => api?.scrollTo(index)}
-            >
-              <div className="md:h-10 md:w-10">{icon}</div>
-              <div
-                className={`font-doppio  text-2xl font-normal leading-loose transition-all md:block ${
-                  activeIndex === index ? "" : "hidden"
-                }`}
-              >
-                {name}
-              </div>
-            </Button>
-          );
-        })}
-      </motion.div>
-
-      <motion.div
-        initial="hidden"
-        variants={fadeIn("up", 0.3)}
-        whileInView={"show"}
-        className="h-full w-full"
-      >
-        <Carousel
-          className="w-full"
-          setApi={setApi}
-          opts={{ align: "start", loop: true }}
-          plugins={[
-            Autoplay({
-              delay: 5000,
-            }),
-          ]}
-        >
-          <CarouselContent>
-            {carouselItems.map(({ imageUrl, descriptions }) => {
+    <div className="backdrop-blur-lg">
+      <div className="bg-star-center">
+        <motion.section className="flex w-full flex-col items-center justify-center px-6 py-10 md:h-screen">
+          <motion.div
+            initial="hidden"
+            variants={fadeIn("up", 0.3)}
+            whileInView={"show"}
+            className="title-gradient bg-clip-text text-center font-bungee text-2xl font-normal leading-9 text-transparent"
+          >
+            Participants
+          </motion.div>
+          <motion.div
+            initial="hidden"
+            variants={fadeIn("up", 0.3)}
+            whileInView={"show"}
+            className="flex w-full flex-row items-center justify-around py-10 md:gap-20 md:py-20"
+          >
+            {roles.map(({ name, icon, override, selectedStyle }, index) => {
               return (
-                <CarouselItem className="flex flex-col items-center justify-center gap-4 px-6 text-white md:flex-row">
-                  <div className="flex w-48 items-center justify-center md:w-full">
-                    <img src={imageUrl} className="h-full w-full" />
+                <Button
+                  key={`roles-${name}`}
+                  className={`inline-flex bg-transparent px-3 py-1 ${override} gap-2 rounded-full ${
+                    activeIndex === index && selectedStyle
+                  }`}
+                  onClick={() => api?.scrollTo(index)}
+                >
+                  <div className="md:h-10 md:w-10">{icon}</div>
+                  <div
+                    className={`font-doppio  text-2xl font-normal leading-loose transition-all md:block ${
+                      activeIndex === index ? "" : "hidden"
+                    }`}
+                  >
+                    {name}
                   </div>
-                  <div className="flex h-full w-full flex-col gap-5 md:gap-0">
-                    {descriptions.map((desc) => {
-                      return (
-                        <div className="flex h-full w-full flex-col justify-around">
-                          {desc}
-                        </div>
-                      );
-                    })}
-                  </div>
-                </CarouselItem>
+                </Button>
               );
             })}
-          </CarouselContent>
-        </Carousel>
-      </motion.div>
-    </motion.section>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            variants={fadeIn("up", 0.3)}
+            whileInView={"show"}
+            className="h-full w-full"
+          >
+            <Carousel
+              className="w-full"
+              setApi={setApi}
+              opts={{ align: "start", loop: true }}
+              plugins={[
+                Autoplay({
+                  delay: 5000,
+                }),
+              ]}
+            >
+              <CarouselContent>
+                {carouselItems.map(({ imageUrl, descriptions }) => {
+                  return (
+                    <CarouselItem className="flex flex-col items-center justify-center gap-4 px-6 text-white md:flex-row">
+                      <div className="flex w-48 items-center justify-center md:w-full">
+                        <img src={imageUrl} className="h-full w-full" />
+                      </div>
+                      <div className="flex h-full w-full flex-col gap-5 md:gap-0">
+                        {descriptions.map((desc) => {
+                          return (
+                            <div className="flex h-full w-full flex-col justify-around">
+                              {desc}
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+            </Carousel>
+          </motion.div>
+        </motion.section>
+      </div>
+    </div>
   );
 };
 

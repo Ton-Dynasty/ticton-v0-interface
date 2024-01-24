@@ -39,14 +39,14 @@ const Milestone = () => {
       version: "V1",
       status: "Release",
       content:
-        "We will release the first version of our product, which will be integrated with the DeFi protocol.",
+        "We will release the first version of our product on mainnet, which will be integrated with the DeFi protocol.",
       active: false,
     },
     {
       version: "V2",
       status: "Scheduled",
       content:
-        "Implement on demand oracle with merkle proof, significantly reducing the cost or oracle.",
+        "Implement on demand oracle with merkle proof, significantly reducing the cost of oracle.",
       active: false,
     },
   ];

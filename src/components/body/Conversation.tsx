@@ -79,7 +79,7 @@ const Conversation = () => {
           </div>
         </>
       ),
-      time: "12:26 PM",
+      time: "02:26 PM",
       side: "left",
       delay: 1.4,
     },
@@ -93,7 +93,7 @@ const Conversation = () => {
           </div>
         </>
       ),
-      time: "13:14 PM",
+      time: "03:14 PM",
       side: "right",
       delay: 1.8,
     },

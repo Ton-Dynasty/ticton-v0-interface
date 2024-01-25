@@ -160,7 +160,7 @@ const RolesCarousel = () => {
             initial="hidden"
             variants={fadeIn("up", 0.3)}
             whileInView={"show"}
-            className="h-full w-full"
+            className="w-full"
           >
             <Carousel
               className="w-full"

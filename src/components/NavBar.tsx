@@ -2,6 +2,9 @@ import { Button } from "./ui/button";
 import logo from "../assets/logo.svg";
 
 function NavBar() {
+  const handleLaunchApp = () => {
+    window.open("https://t.me/TicTonOracleBot", "_blank");
+  };
   return (
     <div className=" sticky flex w-full items-center justify-between px-3 py-3">
       <div className="flex items-center">
@@ -21,7 +24,11 @@ function NavBar() {
           Community
         </a>
       </div>
-      <Button variant={"launch"} className="h-10 px-4 py-2">
+      <Button
+        variant={"launch"}
+        className="h-10 px-4 py-2"
+        onClick={handleLaunchApp}
+      >
         Launch App
       </Button>
     </div>

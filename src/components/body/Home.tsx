@@ -3,9 +3,9 @@ import TicTonLogo from "../../assets/logo.svg";
 
 const Home = () => {
   const links = [
-    { text: "Document", href: "#" },
+    { text: "Document", href: "https://ton-dynasty.github.io/ticton-doc/" },
     { text: "Mini APP", href: "#" },
-    { text: "Learn more", href: "#" },
+    { text: "Learn more", href: "https://github.com/Ton-Dynasty/ticton-v0" },
   ];
   return (
     <div className="backdrop-blur-lg">

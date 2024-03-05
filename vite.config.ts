@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/ticton-v0-interface/",
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
